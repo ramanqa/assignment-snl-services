@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="2827" started-at="2017-07-12T12:59:29Z" finished-at="2017-07-12T12:59:31Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="2827" started-at="2017-07-12T12:59:29Z" finished-at="2017-07-12T12:59:31Z">
+      <class name="com.web_snl.SNL_project.SNL">
+        <test-method status="PASS" signature="Delete_player()[pri:0, instance:com.web_snl.SNL_project.SNL@4c70fda8]" name="Delete_player" duration-ms="232" started-at="2017-07-12T18:29:29Z" finished-at="2017-07-12T18:29:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Delete_player -->
+        <test-method status="PASS" signature="Test_Response_code()[pri:0, instance:com.web_snl.SNL_project.SNL@4c70fda8]" name="Test_Response_code" duration-ms="1626" started-at="2017-07-12T18:29:29Z" finished-at="2017-07-12T18:29:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_Response_code -->
+        <test-method status="PASS" signature="move()[pri:0, instance:com.web_snl.SNL_project.SNL@4c70fda8]" name="move" duration-ms="226" started-at="2017-07-12T18:29:31Z" finished-at="2017-07-12T18:29:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- move -->
+        <test-method status="PASS" signature="player()[pri:0, instance:com.web_snl.SNL_project.SNL@4c70fda8]" name="player" duration-ms="97" started-at="2017-07-12T18:29:31Z" finished-at="2017-07-12T18:29:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- player -->
+        <test-method status="PASS" signature="ladder_move()[pri:1, instance:com.web_snl.SNL_project.SNL@4c70fda8]" name="ladder_move" duration-ms="388" started-at="2017-07-12T18:29:31Z" finished-at="2017-07-12T18:29:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ladder_move -->
+        <test-method status="PASS" signature="blank_move()[pri:2, instance:com.web_snl.SNL_project.SNL@4c70fda8]" name="blank_move" duration-ms="229" started-at="2017-07-12T18:29:31Z" finished-at="2017-07-12T18:29:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- blank_move -->
+      </class> <!-- com.web_snl.SNL_project.SNL -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
