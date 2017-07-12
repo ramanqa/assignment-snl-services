@@ -2,28 +2,32 @@
 <testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3053" started-at="2017-07-12T09:05:18Z" finished-at="2017-07-12T09:05:22Z">
+  <suite name="Default suite" duration-ms="3716" started-at="2017-07-12T10:49:40Z" finished-at="2017-07-12T10:49:44Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3053" started-at="2017-07-12T09:05:18Z" finished-at="2017-07-12T09:05:22Z">
-      <class name="com.training.SnakeTest">
-        <test-method status="PASS" signature="move_player()[pri:0, instance:com.training.SnakeTest@4c70fda8]" name="move_player" duration-ms="1977" started-at="2017-07-12T14:35:18Z" finished-at="2017-07-12T14:35:20Z">
+    <test name="Default test" duration-ms="3716" started-at="2017-07-12T10:49:40Z" finished-at="2017-07-12T10:49:44Z">
+      <class name="com.training.OauthTest">
+        <test-method status="PASS" signature="auth()[pri:0, instance:com.training.OauthTest@5b275dab]" name="auth" is-config="true" duration-ms="2171" started-at="2017-07-12T16:19:40Z" finished-at="2017-07-12T16:19:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- auth -->
+        <test-method status="PASS" signature="move_player()[pri:0, instance:com.training.OauthTest@5b275dab]" name="move_player" duration-ms="229" started-at="2017-07-12T16:19:42Z" finished-at="2017-07-12T16:19:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- move_player -->
-        <test-method status="PASS" signature="update_player()[pri:0, instance:com.training.SnakeTest@4c70fda8]" name="update_player" duration-ms="532" started-at="2017-07-12T14:35:20Z" finished-at="2017-07-12T14:35:21Z">
+        <test-method status="PASS" signature="update_player()[pri:0, instance:com.training.OauthTest@5b275dab]" name="update_player" duration-ms="435" started-at="2017-07-12T16:19:43Z" finished-at="2017-07-12T16:19:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- update_player -->
-        <test-method status="PASS" signature="verify_board()[pri:0, instance:com.training.SnakeTest@4c70fda8]" name="verify_board" duration-ms="406" started-at="2017-07-12T14:35:21Z" finished-at="2017-07-12T14:35:21Z">
+        <test-method status="PASS" signature="verify_board()[pri:0, instance:com.training.OauthTest@5b275dab]" name="verify_board" duration-ms="743" started-at="2017-07-12T16:19:43Z" finished-at="2017-07-12T16:19:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_board -->
-        <test-method status="PASS" signature="verify_player()[pri:0, instance:com.training.SnakeTest@4c70fda8]" name="verify_player" duration-ms="125" started-at="2017-07-12T14:35:21Z" finished-at="2017-07-12T14:35:22Z">
+        <test-method status="PASS" signature="verify_player()[pri:0, instance:com.training.OauthTest@5b275dab]" name="verify_player" duration-ms="105" started-at="2017-07-12T16:19:44Z" finished-at="2017-07-12T16:19:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_player -->
-      </class> <!-- com.training.SnakeTest -->
+      </class> <!-- com.training.OauthTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
