@@ -125,4 +125,15 @@ public class RestServiceTestForBoard1 {
 		 response=given().delete("/player/71.json");
 		System.out.println(response.asString());
 	}
+	/**
+	 * Moving player with id
+	 */
+	@Test(priority=6)
+	public void test_response_move_player(){
+		response= given().get("/move/50.json?player_id=68");
+		Assert.assertEquals(response.statusCode(), 200);
+		
+		response= given().get("/move/1.json?player_id=1");
+		Assert.assertEquals(response.statusCode(), 500);//player not present at id 1
+	}
 }
