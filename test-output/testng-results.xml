@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="3390" started-at="2017-07-12T07:48:30Z" finished-at="2017-07-12T07:48:33Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="3390" started-at="2017-07-12T07:48:30Z" finished-at="2017-07-12T07:48:33Z">
+      <class name="com.training.NewTest">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.training.NewTest@46d56d67]" name="setBaseUri" is-config="true" duration-ms="418" started-at="2017-07-12T13:18:30Z" finished-at="2017-07-12T13:18:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="testing_board_status()[pri:0, instance:com.training.NewTest@46d56d67]" name="testing_board_status" duration-ms="2033" started-at="2017-07-12T13:18:30Z" finished-at="2017-07-12T13:18:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_board_status -->
+        <test-method status="PASS" signature="testing_player_Status()[pri:0, instance:com.training.NewTest@46d56d67]" name="testing_player_Status" duration-ms="813" started-at="2017-07-12T13:18:32Z" finished-at="2017-07-12T13:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_player_Status -->
+        <test-method status="PASS" signature="testing_roll_dice_movement_status()[pri:0, instance:com.training.NewTest@46d56d67]" name="testing_roll_dice_movement_status" duration-ms="111" started-at="2017-07-12T13:18:33Z" finished-at="2017-07-12T13:18:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_roll_dice_movement_status -->
+      </class> <!-- com.training.NewTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
