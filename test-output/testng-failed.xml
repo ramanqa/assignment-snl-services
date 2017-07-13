@@ -9,7 +9,10 @@
           <include name="check_board_creation"/>
           <include name="player_add_check"/>
           <include name="check_player_details"/>
+          <include name="delete_player"/>
+          <include name="check_roll_dice"/>
           <include name="deleteboard"/>
+          <include name="add_player_while_game_is_on"/>
         </methods>
       </class> <!-- web_service_test.assignment_snl_services.NewTest -->
     </classes>

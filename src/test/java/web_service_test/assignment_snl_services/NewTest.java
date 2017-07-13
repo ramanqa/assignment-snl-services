@@ -32,6 +32,8 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
+import groovy.json.internal.JsonParserLax;
+
 public class NewTest {
 
 	int Board_id;
@@ -185,11 +187,64 @@ public class NewTest {
 	}
 
 	@Test(dependsOnMethods = "update_player")
-	void delete_player() {
+	void check_roll_dice() throws IOException, ParseException {
+
+		conn = roll_dice(Board_id, player_id);
+		JSONObject complete = getJson(conn);
+		JSONObject response = (JSONObject) complete.get("response");
+		JSONObject player = (JSONObject) response.get("player");
+		assertThat(Integer.parseInt(response.get("status").toString())).isEqualTo(-1);
+
+		
+		
+		player_id = player_id - 1;
+		
+		int play_id=player_id;
+		it:for(int a=1;a<=500;a++)
+		{
+			
+		conn = roll_dice(Board_id, play_id);
+		complete = getJson(conn);
+		response = (JSONObject) complete.get("response");
+		System.out.println("    "+response);
+		assertThat(Integer.parseInt(response.get("status").toString())).isEqualTo(1);
+		player = (JSONObject) response.get("player");
+		
+		if(player.get("position").toString().equals("25"))
+		{
+			break it;
+		}
+		play_id=play_id+1;
+		if(play_id>player_id+4)
+		{
+			play_id=player_id;
+		}
+		}
 
 	}
 
-	@Test(dependsOnMethods = "update_player")
+	@Test(dependsOnMethods = "check_roll_dice")
+	void delete_player() throws IOException, ParseException {
+
+		conn = player_deleted(player_id);
+
+		assertThat(conn.getResponseCode()).isEqualTo(200);
+		JSONObject responce = (JSONObject) getJson(conn).get("response");
+		String status = (String) responce.get("success");
+
+		assertThat(status).isEqualTo("OK");
+
+	}
+	
+	@Test(dependsOnMethods = "delete_player")
+	void add_player_while_game_is_on() throws IOException, ParseException
+	{
+		conn = addplayer_post_call(Board_id + "", "akshaykumar");
+		System.out.println(getJson(conn));
+		
+	}
+
+	@Test(dependsOnMethods = "add_player_while_game_is_on")
 	public void deleteboard() throws IOException {
 
 		try {
@@ -201,14 +256,15 @@ public class NewTest {
 			conn.connect();
 
 			assertThat(conn.getResponseCode()).isEqualTo(200);
-			JSONObject obj= getJson(conn);
-			System.out.println("obj "+obj);
-			
+			JSONObject responce = (JSONObject) getJson(conn).get("response");
+			String status = (String) responce.get("success");
 
+			assertThat(status).isEqualTo("OK");
 
 			conn.disconnect();
 
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
 	}
@@ -258,6 +314,49 @@ public class NewTest {
 			writer.write(message);
 
 			writer.close();
+
+			return connection;
+		} catch (IOException e) {
+			// ...
+		}
+		return null;
+
+	}
+
+	HttpURLConnection player_deleted(int player_id) {
+
+		try {
+			// instantiate the URL object with the target URL of the resource to
+			// request
+			URL url = new URL("http://10.0.1.86/snl/rest/v1/player/" + player_id + ".json");
+
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+			connection.setDoOutput(true);
+			connection.setRequestMethod("DELETE");
+			connection.connect();
+
+			return connection;
+		} catch (IOException e) {
+			// ...
+		}
+		return null;
+
+	}
+
+	HttpURLConnection roll_dice(int board, int player_id) {
+
+		try {
+			// instantiate the URL object with the target URL of the resource to
+			// request
+			URL url = new URL("http://10.0.1.86/snl/rest/v1/move/" + board + ".json?player_id=" + player_id);
+
+			System.out.println(url.toString());
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+			connection.setDoOutput(true);
+			connection.setRequestMethod("GET");
+			// connection.connect();
 
 			return connection;
 		} catch (IOException e) {
