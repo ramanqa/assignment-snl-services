@@ -18,7 +18,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
-public class RestServiceTestForBoard1 {
+public class RestServiceTestForBoard2 {
 	Response response = null;
 	String jsonAsString = null;
 	private JSONParser jsonParser;
@@ -40,11 +40,11 @@ public class RestServiceTestForBoard1 {
 	@Test(priority = 2)
 	public void test_methods_for_board_list() {
 
-		response = given().get("/board.json");
+		response =  given().auth().preemptive().basic("su", "root_pass").get("/board.json");
 		Assert.assertEquals(response.statusCode(), 200);
 		Assert.assertEquals(response.statusLine(), "HTTP/1.1 200 OK");
 		// System.out.println(response.asString());
-		response = given().when().get("/board.json").then().contentType(ContentType.JSON).extract().response();
+		response =  given().auth().preemptive().basic("su", "root_pass").when().get("/board.json").then().contentType(ContentType.JSON).extract().response();
 		String jsonAsString2 = response.asString();
 		// System.out.println(response.asString());
 		Assert.assertFalse(jsonAsString.contains(jsonAsString2));
@@ -57,10 +57,10 @@ public class RestServiceTestForBoard1 {
 	 */
 	@Test(priority = 1)
 	public void test_response_for_new_board() throws ParseException {
-		response = given().get("/board/new.json");
+		response =  given().auth().preemptive().basic("su", "root_pass").get("/board/new.json");
 		Assert.assertEquals(response.statusCode(), 200);
 		Assert.assertEquals(response.statusLine(), "HTTP/1.1 200 OK");
-		response = given().when().get("/board/new.json").then().contentType(ContentType.JSON).extract().response();
+		response =  given().auth().preemptive().basic("su", "root_pass").when().get("/board/new.json").then().contentType(ContentType.JSON).extract().response();
 		jsonAsString = response.asString();
 		// System.out.println(response.asString());
 		JSONParser parser = new JSONParser();
@@ -76,16 +76,16 @@ public class RestServiceTestForBoard1 {
 	 */
 	@Test(priority = 6)
 	public void test_response_board_with_id() {
-		response = given().get("/board/"+id+".json");
+		response =  given().auth().preemptive().basic("su", "root_pass").get("/board/"+id+".json");
 		Assert.assertEquals(response.statusCode(), 200);
 		Assert.assertEquals(response.statusLine(), "HTTP/1.1 200 OK");
 		// System.out.println(response.asString());
 
-		response = given().put("/board/7.json").andReturn();
+		response =  given().auth().preemptive().basic("su", "root_pass").put("/board/7.json").andReturn();
 		// System.out.println(response.asString());
 
 	
-		  response = given().delete("/board/310.json");
+		  response = given().auth().preemptive().basic("su", "root_pass").delete("/board/310.json");
 		  Assert.assertEquals(response.statusCode(), 500);//on deleting the board internal error will occur on accessing status
 		//  System.out.println(response.andReturn().asString());
 		
@@ -111,9 +111,10 @@ public class RestServiceTestForBoard1 {
 		}
 		jsonObject.put("board", id);
 			//System.out.println(jsonObject.toJSONString());
-	response =	given().contentType("application/json").body(jsonObject).when().post("/player.json");
+	response =	 given().auth().preemptive().basic("su", "root_pass").contentType("application/json").body(jsonObject).when().post("/player.json");
 	Assert.assertEquals(response.statusCode(), 200);
 	 id2=(response.getBody().jsonPath().getJsonObject("response.player.id")).toString();
+	 System.out.println(id2);
 	}
 
 	/**
@@ -122,7 +123,7 @@ public class RestServiceTestForBoard1 {
 	 */
 	@Test(priority = 5)
 	public void test_response_for_player_at_id() throws ParseException {
-		response=given().get("/player/"+id2+".json");
+		response= given().auth().preemptive().basic("su", "root_pass").get("/player/"+id2+".json");
 		Assert.assertEquals(response.statusCode(), 200);
 	//	System.out.println(response.asString());
 		InputStream input1 = this.getClass().getClassLoader().getResourceAsStream("test2.json");
@@ -133,7 +134,7 @@ public class RestServiceTestForBoard1 {
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		}
-		response= given().contentType("application/json").body(jsonObject1).when().put("/player/"+id2+".json");
+	response=  given().auth().preemptive().basic("su", "root_pass").contentType("application/json").body(jsonObject1).when().put("/player/"+id2+".json");
 		Assert.assertEquals(response.statusCode(), 200);
 		 response=given().delete("/player/"+id2+".json");
 		//System.out.println(response.asString());
@@ -143,10 +144,10 @@ public class RestServiceTestForBoard1 {
 	 */
 	@Test(priority=4)
 	public void test_response_move_player(){
-		response= given().get("/move/"+id+".json?player_id="+id2);
+		response=  given().auth().preemptive().basic("su", "root_pass").get("/move/"+id+".json?player_id="+id2);
 		Assert.assertEquals(response.statusCode(), 200);
 		
-		response= given().get("/move/1.json?player_id=1");
+		response=  given().auth().preemptive().basic("su", "root_pass").get("/move/1.json?player_id=1");
 		Assert.assertEquals(response.statusCode(), 500);//player not present at id 1
 	}
 }

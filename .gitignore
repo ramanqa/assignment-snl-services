@@ -3,6 +3,6 @@
 /bin/
 
 /test-output/
-/.classpath/
-/.project/
+.classpath
+.project
 /.settings/
