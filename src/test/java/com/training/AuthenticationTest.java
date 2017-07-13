@@ -1,4 +1,7 @@
 package com.training;
+
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
@@ -17,49 +20,66 @@ import static com.jayway.restassured.RestAssured.*;
 
 import com.jayway.restassured.response.Response;
 
-
 public class AuthenticationTest {
-	
-	@Test
-	public void basic(){
-		RestAssured.baseURI="http://10.0.1.86/snl";
-		//RestAssured.authentication = basic("username", "password");
-		given().auth().preemptive().basic("su", "root_pass").when().get("/rest/v2/board.json").then().statusCode(200);
-		given().auth().preemptive().basic("su", "root_pass").when().get("/rest/v1/board/78.json").then().statusCode(200);
-		Response res= given().auth().preemptive().basic("su", "root_pass").when().get("/rest/v2/board.json");
-	System.out.println(res.asString());
-	}
-	
-	@Test
-	public void verify_player() throws UnsupportedEncodingException, IOException, ParseException
-	
-	{
-		RestAssured.baseURI="http://10.0.1.86/snl";
-		JSONParser parser = new JSONParser();	
-		Object obj = parser.parse(new FileReader("src/test/resources/db.json"));
-		JSONObject jsonObject = (JSONObject) obj;
+	Integer id;
+	Integer player_id;
+	String path;
 
-		given().auth().preemptive().basic("su", "root_pass").when().contentType("application/json").body(jsonObject).when().post("/rest/v1/player.json").then()		
-	.statusCode(200);
+	@BeforeTest
+	public void load() {
+		RestAssured.baseURI = "http://10.0.1.86/snl";
+
 	}
-	@Test
-	public void update_player() throws FileNotFoundException, IOException, ParseException
-	{
-		RestAssured.baseURI="http://10.0.1.86/snl";
-		given().get("/rest/v1/player/48.json").then().statusCode(200);
-		JSONParser parser = new JSONParser();
-	Object obj = parser.parse(new FileReader("src/test/resources/dat.json"));
-		JSONObject jsonObject = (JSONObject) obj;
-		
-		given().auth().preemptive().basic("su", "root_pass").when().contentType("application/json").body(jsonObject).when().put("/rest/v1/player/48.json").then()		
-		.statusCode(200);
+
+	@Test(priority = 1)
+	public void auth_verify_board() {
+
+		given().auth().preemptive().basic("su", "root_pass").when().get("/rest/v2/board.json").then().statusCode(200);
+		Response res = given().auth().preemptive().basic("su", "root_pass").when().get("/rest/v2/board/new.json");
+		id = res.getBody().jsonPath().getJsonObject("response.board.id");
+		res.then().statusCode(200);
+		path = "/rest/v2/board/" + id + ".json";
+		given().auth().preemptive().basic("su", "root_pass").when().get(path).then().statusCode(200);
+
+		System.out.println(res.asString());
 	}
-	
-	@Test
-	public void move_player()
+
+	@Test(priority = 2)
+	public void auth_verify_player() throws UnsupportedEncodingException, IOException, ParseException
+
 	{
-		RestAssured.baseURI="http://10.0.1.86/snl";
-		given().auth().preemptive().basic("su", "root_pass").when().get("/rest/v2/move/78.json?player_id=48").then().statusCode(200);
+
+		String son = "{ \"board\":\"" + id + "\",  \"player\": {\"name\": \"shivani\" } }";
+
+		Response res = given().auth().preemptive().basic("su", "root_pass").when().contentType("application/json")
+				.body(son).when().post("/rest/v2/player.json");
+		player_id = res.getBody().jsonPath().getJsonObject("response.player.id");
+		res.then().statusCode(200);
+	}
+
+	@Test(priority = 3)
+	public void auth_update_player() throws FileNotFoundException, IOException, ParseException {
+		String path2 = "/rest/v2/player/" + player_id + ".json";
+
+		given().auth().preemptive().basic("su", "root_pass").get(path2).then().statusCode(200);
+
+		String json = "{\"player\":{\"name\": \"kanika\"}}";
+		given().auth().preemptive().basic("su", "root_pass").when().contentType("application/json").body(json).when()
+				.put(path2).then().statusCode(200);
+	}
+
+	@Test(priority = 4)
+	public void auth_move_player() {
+		String path3 = "/rest/v2/move/" + id + ".json?player_id=" + player_id;
+		given().auth().preemptive().basic("su", "root_pass").when().get(path3).then().statusCode(200);
+
+	}
+
+	@Test(priority = 5)
+	public void delete_board() {
+		given().auth().preemptive().basic("su", "root_pass").when().put(path).then().statusCode(200);
+		given().auth().preemptive().basic("su", "root_pass").when().delete(path).then().statusCode(200);
 
 	}
 }
+/* board id used is 78 */

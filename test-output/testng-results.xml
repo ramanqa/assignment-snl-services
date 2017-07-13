@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3716" started-at="2017-07-12T10:49:40Z" finished-at="2017-07-12T10:49:44Z">
+  <suite name="Default suite" duration-ms="8243" started-at="2017-07-13T06:36:38Z" finished-at="2017-07-13T06:36:46Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3716" started-at="2017-07-12T10:49:40Z" finished-at="2017-07-12T10:49:44Z">
+    <test name="Default test" duration-ms="8243" started-at="2017-07-13T06:36:38Z" finished-at="2017-07-13T06:36:46Z">
       <class name="com.training.OauthTest">
-        <test-method status="PASS" signature="auth()[pri:0, instance:com.training.OauthTest@5b275dab]" name="auth" is-config="true" duration-ms="2171" started-at="2017-07-12T16:19:40Z" finished-at="2017-07-12T16:19:42Z">
+        <test-method status="PASS" signature="auth()[pri:0, instance:com.training.OauthTest@5b275dab]" name="auth" is-config="true" duration-ms="6679" started-at="2017-07-13T12:06:38Z" finished-at="2017-07-13T12:06:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- auth -->
-        <test-method status="PASS" signature="move_player()[pri:0, instance:com.training.OauthTest@5b275dab]" name="move_player" duration-ms="229" started-at="2017-07-12T16:19:42Z" finished-at="2017-07-12T16:19:43Z">
+        <test-method status="PASS" signature="Oauth_verify_board()[pri:1, instance:com.training.OauthTest@5b275dab]" name="Oauth_verify_board" duration-ms="1072" started-at="2017-07-13T12:06:45Z" finished-at="2017-07-13T12:06:46Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- move_player -->
-        <test-method status="PASS" signature="update_player()[pri:0, instance:com.training.OauthTest@5b275dab]" name="update_player" duration-ms="435" started-at="2017-07-12T16:19:43Z" finished-at="2017-07-12T16:19:43Z">
+        </test-method> <!-- Oauth_verify_board -->
+        <test-method status="PASS" signature="Oauth_verify_player()[pri:2, instance:com.training.OauthTest@5b275dab]" name="Oauth_verify_player" duration-ms="74" started-at="2017-07-13T12:06:46Z" finished-at="2017-07-13T12:06:46Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- update_player -->
-        <test-method status="PASS" signature="verify_board()[pri:0, instance:com.training.OauthTest@5b275dab]" name="verify_board" duration-ms="743" started-at="2017-07-12T16:19:43Z" finished-at="2017-07-12T16:19:44Z">
+        </test-method> <!-- Oauth_verify_player -->
+        <test-method status="PASS" signature="Oauth_update_player()[pri:3, instance:com.training.OauthTest@5b275dab]" name="Oauth_update_player" duration-ms="170" started-at="2017-07-13T12:06:46Z" finished-at="2017-07-13T12:06:46Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verify_board -->
-        <test-method status="PASS" signature="verify_player()[pri:0, instance:com.training.OauthTest@5b275dab]" name="verify_player" duration-ms="105" started-at="2017-07-12T16:19:44Z" finished-at="2017-07-12T16:19:44Z">
+        </test-method> <!-- Oauth_update_player -->
+        <test-method status="PASS" signature="Oauth_move_player()[pri:4, instance:com.training.OauthTest@5b275dab]" name="Oauth_move_player" duration-ms="84" started-at="2017-07-13T12:06:46Z" finished-at="2017-07-13T12:06:46Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verify_player -->
+        </test-method> <!-- Oauth_move_player -->
+        <test-method status="PASS" signature="delete_board()[pri:5, instance:com.training.OauthTest@5b275dab]" name="delete_board" duration-ms="139" started-at="2017-07-13T12:06:46Z" finished-at="2017-07-13T12:06:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delete_board -->
       </class> <!-- com.training.OauthTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
