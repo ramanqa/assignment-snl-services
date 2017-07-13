@@ -128,7 +128,26 @@ public class v2Test {
 
 	}
 
-	@Test(priority = 8)
+	@Test(priority=8)
+	public void Board_get_details_of_board() throws MalformedURLException{
+		URL url=new URL("http://10.0.1.86/snl/rest/v2/board/"+Board_id+".json");
+		
+		Object obj=given().when().get(url).then().extract().jsonPath().get("response.board");
+		System.out.println(obj);
+		
+	}
+	
+	@Test(priority=10)
+	public void Board_delete_board() throws MalformedURLException{
+		URL url=new URL("http://10.0.1.86/snl/rest/v2/board/"+Board_id+".json");
+		given().when().delete(url);
+		
+		
+		
+		
+	}
+	
+	@Test(priority = 9)
 	public void player_delete_player() throws MalformedURLException {
 
 		URL url = new URL("http://10.0.1.86/snl/rest/v2/player/" + player_id + ".json");
@@ -136,5 +155,6 @@ public class v2Test {
 		given().contentType("application/json").when().delete(url);
 
 	}
+
 
 }
