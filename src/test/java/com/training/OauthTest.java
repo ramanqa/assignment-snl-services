@@ -1,24 +1,26 @@
 package com.training;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-import com.jayway.restassured.RestAssured;
-import com.jayway.restassured.path.json.JsonPath;
-import com.jayway.restassured.response.Response;
-import static com.jayway.restassured.RestAssured.*;
+import static com.jayway.restassured.RestAssured.given;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import static org.hamcrest.Matchers.lessThan;
+import com.jayway.restassured.RestAssured;
+import com.jayway.restassured.path.json.JsonPath;
+import com.jayway.restassured.response.Response;
+
 public class OauthTest {
 	String accessToken;
+	Integer boardid;
+	Integer playerid1;
 
 	@BeforeClass
 	public void auth() {
@@ -43,74 +45,78 @@ public class OauthTest {
 	public void checking_basic_Authentication() {
 
 		given().auth().oauth2(accessToken).get().then().statusCode(200);
+		//testing load time
+		given().auth().oauth2(accessToken).get("rest/v3/board.json").then().statusCode(200).and().time(lessThan(1000L));
+
 	}
-		@Test
-	public void testing_board_status()
-	{
+
+	@Test
+	public void testing_board_status() {
 		/**
 		 * GET - Get a list of boards
 		 */
-	given().auth().oauth2(accessToken).get("/rest/v1/board.json").then().statusCode(200);
-	
+		given().auth().oauth2(accessToken).get("/rest/v3/board.json").then().statusCode(200);
+
 		/**
 		 * GET - create a new board
 		 */
-		given().auth().oauth2(accessToken).get("/rest/v1/board/new.json").then().statusCode(200);
-	
+		boardid = given().auth().oauth2(accessToken).get("/rest/v3/board/new.json").then().statusCode(200).extract()
+				.path("response.board.id");
+
 		/**
 		 * GET - Get a details of a board
 		 */
-		given().auth().oauth2(accessToken).get("/rest/v1/board/8.json").then().statusCode(200);
-		
-		/**
-		 * PUT - Reset board, delete players
-		 */
-		given().auth().oauth2(accessToken).put("/rest/v1/board/8.json").then().statusCode(200);
-		/**
-		 * DELETE - Destroy board
-		 */
-
-		given().auth().oauth2(accessToken).delete("/rest/v1/board/24.json").then().statusCode(200);
+		given().auth().oauth2(accessToken).get("/rest/v3/board/" + boardid + ".json").then().statusCode(200);
 
 	}
+
 	@Test
 	public void testing_player_Status() throws UnsupportedEncodingException, IOException, ParseException {
 
 		/**
 		 * POST - Join new player to a board
 		 */
-		InputStream input = this.getClass().getClassLoader().getResourceAsStream("db.json");
-		JSONParser jsonParser = new JSONParser();
-		JSONObject jsonObject = (JSONObject) jsonParser.parse(new InputStreamReader(input, "UTF-8"));
-		given().auth().oauth2(accessToken).contentType("application/json").body(jsonObject).when().post("/rest/v1/player.json").then()
-				.statusCode(200);
+		
+		String playerDetails1 = "{ \"board\":\"" + boardid + "\",  \"player\": {\"name\": \"anjali\" } }";
+
+		playerid1 = given().auth().oauth2(accessToken).contentType("application/json").body(playerDetails1).when().post("/rest/v3/player.json")
+				.then().statusCode(200).extract().response().path("response.player.id");
 		/**
 		 * GET - get player details
 		 */
-		given().auth().oauth2(accessToken).get("/rest/v1/player/70.json").then().statusCode(200);
+		given().auth().oauth2(accessToken).get("/rest/v3/player/" + playerid1 + ".json").then().statusCode(200);
 
 		/**
 		 * PUT - update player details
 		 */
-		InputStream input1 = this.getClass().getClassLoader().getResourceAsStream("ab.json");
-		JSONObject jsonObject1 = (JSONObject) jsonParser.parse(new InputStreamReader(input1, "UTF-8"));
-		given().auth().oauth2(accessToken).contentType("application/json").body(jsonObject1).when().put("/rest/v1/player/70.json").then()
-				.statusCode(200);
-		given().auth().oauth2(accessToken).get("/rest/v1/player/70.json").then().statusCode(200);
-		/**
-		 * DELETE - quit player from game and destroy player
-		 */
-		given().auth().oauth2(accessToken).delete("/rest/v1/player/72.json").then().statusCode(200);
-
+		String updatedPlayer = "{\"player\": {\"name\": \"anu\" } }";
+		given().auth().oauth2(accessToken).contentType("application/json").body(updatedPlayer).when().put("/rest/v3/player/" + playerid1 + ".json")
+				.then().statusCode(200);
+		
 	}
+
 	@Test
-	public void testing_roll_dice_movement_status()
-	{
+	public void testing_roll_dice_movement_status() {
 		/**
 		 * GET - roll dice and move player on board
 		 */
-		
-				given().auth().oauth2(accessToken).get("/rest/v1/move/42.json?player_id=70").then().statusCode(200);
+		given().auth().oauth2(accessToken).get("/rest/v3/move/" + boardid + ".json?player_id=" + playerid1 + "").then().statusCode(200);
+
+	}
+	@Test
+	public void z_deleting_board_and_players() {
+		/**
+		 * DELETE - quit player from game and destroy player
+		 */
+		given().auth().oauth2(accessToken).delete("/rest/v3/player/" + playerid1 + ".json").then().statusCode(200);
+		/**
+		 * PUT - Reset board, delete players
+		 */
+		given().auth().oauth2(accessToken).put("/rest/v3/board/" + boardid + ".json").then().statusCode(200);
+		/**
+		 * DELETE - Destroy board
+		 */
+		given().auth().oauth2(accessToken).delete("/rest/v3/board/" + boardid + ".json");
 	}
 
 }
