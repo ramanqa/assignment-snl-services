@@ -31,8 +31,8 @@ public class OuAth2Test {
 		@BeforeTest
 	 	public void authorisation() {
 	 		Response response = given().parameters("username", "su", "password", "root_pass", "grant_type", "client_credentials", "client_id",
-	 						"8c499de42c8907350a69b418bdc2bc96ba57c7d9e7a3fcc61592b7dd036a47d8", "client_secret",
-	 					"bf3f128dd9240eb6067cce29e2db3b5814befb7e9afaac2aa2032995d584de35")
+	 						"9b6f9b57a19b4bd6c191e0c7ca22a9f599eabad3dc876cc743c246e3eaa70ef2", "client_secret",
+	 					"5280a7d8c7c3a05f37739baa232ebb745024915676c189ac2e8fb43f0c7b1ced")
 	 				.auth().preemptive()
 	 				.basic("8c499de42c8907350a69b418bdc2bc96ba57c7d9e7a3fcc61592b7dd036a47d8",
 	 						"bf3f128dd9240eb6067cce29e2db3b5814befb7e9afaac2aa2032995d584de35")
