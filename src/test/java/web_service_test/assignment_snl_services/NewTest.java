@@ -39,6 +39,7 @@ public class NewTest {
 	int Board_id;
 	JSONObject json_verify;
 	int player_id;
+	HttpURLConnection conn;
 
 	@Test
 	public void init() {
@@ -50,27 +51,11 @@ public class NewTest {
 
 		try {
 
-			URL url = new URL("http://10.0.1.86/snl//rest/v1/board/new.json");
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-			conn.setRequestMethod("GET");
-			conn.setRequestProperty("Accept", "application/json");
-
-			// test1
+			conn = getConnection("http://10.0.1.86/snl//rest/v1/board/new.json", "GET");
 			assertThat(conn.getResponseCode()).isEqualTo(200);
 
-			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+			JSONObject complete = getJson(conn);
 
-			String output;
-			System.out.println("Output from Server .... \n");
-			output = br.readLine();
-
-			// test2
-			assertThat(output).isNotBlank();
-			JSONObject complete = new JSONObject();
-			JSONParser parser = new JSONParser();
-
-			// test3
-			complete = (JSONObject) parser.parse(output);
 			JSONObject inner1 = (JSONObject) complete.get("response");
 			assertThat(Integer.parseInt(inner1.get("status").toString())).isEqualTo(1);
 
@@ -82,19 +67,15 @@ public class NewTest {
 
 			conn.disconnect();
 
-		} catch (MalformedURLException e) {
+		}
 
-			e.printStackTrace();
-
-		} catch (IOException e) {
+		catch (Exception e) {
 
 			e.printStackTrace();
 
 		}
 
 	}
-
-	static HttpURLConnection conn;
 
 	@Test(dependsOnMethods = "check_board_creation")
 	public void player_add_check() throws IOException, ParseException {
@@ -106,7 +87,6 @@ public class NewTest {
 		conn = this.addplayer_post_call(Board_id + "", "nishant");
 
 		jsonobj = (JSONObject) getJson(conn).get("response");
-		assertThat(jsonobj).isNotNull();
 		assertThat(Integer.parseInt(jsonobj.get("status").toString())).isEqualTo(1);
 
 		jsonplayer = (JSONObject) jsonobj.get("player");
@@ -139,26 +119,9 @@ public class NewTest {
 	@Test(dependsOnMethods = "player_add_check")
 	public void check_player_details() throws IOException, ParseException {
 
-		URL url = new URL("http://10.0.1.86/snl//rest/v1/player/" + player_id + ".json");
-		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		conn.setRequestMethod("GET");
-		conn.setRequestProperty("Accept", "application/json");
+		conn = getConnection("http://10.0.1.86/snl//rest/v1/player/" + player_id + ".json", "GET");
+		JSONObject complete = getJson(conn);
 
-		BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-
-		String output;
-		System.out.println("Output from Server .... \n");
-		output = br.readLine();
-
-		System.out.println(output);
-		// test2
-		assertThat(output).isNotBlank();
-
-		JSONObject complete = new JSONObject();
-		JSONParser parser = new JSONParser();
-
-		// test3
-		complete = (JSONObject) parser.parse(output);
 		JSONObject response = (JSONObject) complete.get("response");
 		assertThat(response).isNotNull();
 
@@ -176,7 +139,6 @@ public class NewTest {
 
 		JSONObject response = (JSONObject) complete.get("response");
 		assertThat(Integer.parseInt(response.get("status").toString())).isEqualTo(1);
-		assertThat(response).isNotNull();
 
 		JSONObject player = (JSONObject) response.get("player");
 
@@ -195,30 +157,25 @@ public class NewTest {
 		JSONObject player = (JSONObject) response.get("player");
 		assertThat(Integer.parseInt(response.get("status").toString())).isEqualTo(-1);
 
-		
-		
 		player_id = player_id - 1;
-		
-		int play_id=player_id;
-		it:for(int a=1;a<=500;a++)
-		{
-			
-		conn = roll_dice(Board_id, play_id);
-		complete = getJson(conn);
-		response = (JSONObject) complete.get("response");
-		System.out.println("    "+response);
-		assertThat(Integer.parseInt(response.get("status").toString())).isEqualTo(1);
-		player = (JSONObject) response.get("player");
-		
-		if(player.get("position").toString().equals("25"))
-		{
-			break it;
-		}
-		play_id=play_id+1;
-		if(play_id>player_id+4)
-		{
-			play_id=player_id;
-		}
+
+		int play_id = player_id;
+		it: for (int a = 1; a <= 500; a++) {
+
+			conn = roll_dice(Board_id, play_id);
+			complete = getJson(conn);
+			response = (JSONObject) complete.get("response");
+			System.out.println("    " + response);
+			assertThat(Integer.parseInt(response.get("status").toString())).isEqualTo(1);
+			player = (JSONObject) response.get("player");
+
+			if (player.get("position").toString().equals("25")) {
+				break it;
+			}
+			play_id = play_id + 1;
+			if (play_id > player_id + 4) {
+				play_id = player_id;
+			}
 		}
 
 	}
@@ -235,13 +192,19 @@ public class NewTest {
 		assertThat(status).isEqualTo("OK");
 
 	}
-	
+
 	@Test(dependsOnMethods = "delete_player")
-	void add_player_while_game_is_on() throws IOException, ParseException
-	{
+	void add_player_while_game_is_on() throws IOException, ParseException {
 		conn = addplayer_post_call(Board_id + "", "akshaykumar");
-		System.out.println(getJson(conn));
-		
+
+		JSONObject complete = getJson(conn);
+		JSONObject response = (JSONObject) complete.get("response");
+		assertThat(Integer.parseInt(response.get("status").toString())).isEqualTo(1);
+		JSONObject player = (JSONObject) response.get("player");
+
+		assertThat((player.get("name").toString())).isEqualTo("akshaykumar");
+		assertThat(Integer.parseInt(player.get("position").toString())).isEqualTo(0);
+
 	}
 
 	@Test(dependsOnMethods = "add_player_while_game_is_on")
@@ -266,6 +229,16 @@ public class NewTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+	}
+
+	HttpURLConnection getConnection(String urls, String type) throws IOException {
+
+		URL url = new URL(urls);
+		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		conn.setRequestMethod(type);
+		conn.setRequestProperty("Accept", "application/json");
+		return conn;
 
 	}
 
