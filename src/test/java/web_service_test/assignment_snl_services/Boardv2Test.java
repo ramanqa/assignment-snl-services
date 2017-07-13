@@ -1,53 +1,31 @@
 package web_service_test.assignment_snl_services;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
-import java.net.URLEncoder;
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import org.apache.http.HttpResponse;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.utils.URLEncodedUtils;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.jayway.restassured.internal.path.json.JSONAssertion;
-import com.jayway.restassured.internal.path.json.mapping.JsonObjectDeserializer;
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.WebResource;
-
-import groovy.json.internal.JsonParserLax;
-
-public class BoardTest {
+public class Boardv2Test {
 
 	int Board_id;
 	JSONObject json_verify;
 	int player_id;
 	HttpURLConnection conn;
 	Back_Board_help boardHelp;
+	static String user_pass;
+	
 
 	@BeforeTest
 	public void init() {
 		boardHelp = new Back_Board_help();
+	    user_pass = "?username=su&password=root_pass";
 	}
 
 	@Test
@@ -55,8 +33,8 @@ public class BoardTest {
 
 		try {
 
-			conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/v1/board/new.json", "GET");
-			assertThat(conn.getResponseCode()).isEqualTo(200);
+			conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/v2/board/new.json"+user_pass, "GET");
+			//assertThat(conn.getResponseCode()).isEqualTo(200);
 
 			JSONObject complete = boardHelp.getJson(conn);
 
@@ -123,7 +101,7 @@ public class BoardTest {
 	@Test(dependsOnMethods = "player_add_check")
 	void check_player_details() throws IOException, ParseException {
 
-		conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/v1/player/" + player_id + ".json", "GET");
+		conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/v2/player/" + player_id + ".json"+user_pass, "GET");
 		JSONObject complete = boardHelp.getJson(conn);
 
 		JSONObject response = (JSONObject) complete.get("response");
@@ -137,14 +115,14 @@ public class BoardTest {
 	@Test(dependsOnMethods = "player_add_check")
 	void check_inavlid_player_details() throws IOException, ParseException {
 
-		conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/v1/player/" + 0 + ".json", "GET");
+		conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/v2/player/" + 0 + ".json"+user_pass, "GET");
 		assertThat(conn.getResponseCode()).isEqualTo(404);
 
 	}
 
 	@Test(dependsOnMethods = "player_add_check")
 	void board_details() throws IOException, ParseException {
-		conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/v1/board/" + Board_id + ".json", "GET");
+		conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/v2/board/" + Board_id + ".json"+user_pass, "GET");
 		JSONObject response = (JSONObject) boardHelp.getJson(conn).get("response");
 		assertThat(Integer.parseInt(response.get("status").toString())).isEqualTo(1);
 
@@ -160,7 +138,7 @@ public class BoardTest {
 
 	@Test(dependsOnMethods = "player_add_check")
 	void board_invalid_details() throws IOException, ParseException {
-		conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/v1/board/" + 0 + ".json", "GET");
+		conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/v2/board/" + 0 + ".json"+user_pass, "GET");
 		JSONObject response = (JSONObject) boardHelp.getJson(conn).get("response");
 		assertThat(Integer.parseInt(response.get("status").toString())).isEqualTo(-1);
 
@@ -247,7 +225,7 @@ public class BoardTest {
 
 		try {
 
-			URL url = new URL("http://10.0.1.86/snl/rest/v1/board/" + Board_id + ".json");
+			URL url = new URL("http://10.0.1.86/snl/rest/v2/board/" + Board_id + ".json"+user_pass);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("DELETE");
 			conn.setDoOutput(true);
@@ -268,3 +246,4 @@ public class BoardTest {
 	}
 
 }
+

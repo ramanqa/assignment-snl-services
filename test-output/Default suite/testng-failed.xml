@@ -3,14 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="web_service_test.assignment_snl_services.BoardTest">
+      <class name="web_service_test.assignment_snl_services.Boardv2Test">
         <methods>
           <include name="check_board_creation"/>
-          <include name="board_invalid_details"/>
           <include name="init"/>
-          <include name="player_add_check"/>
         </methods>
-      </class> <!-- web_service_test.assignment_snl_services.BoardTest -->
+      </class> <!-- web_service_test.assignment_snl_services.Boardv2Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
