@@ -31,14 +31,14 @@ public class RestServiceTestForBoard2 {
 	@BeforeClass
 	public static void setupURL() {
 		RestAssured.baseURI = "http://10.0.1.86/snl/";
-		RestAssured.basePath = "/rest/v1/";
+		RestAssured.basePath = "/rest/v2/";
 	}
 
 	/**
 	 * test Get method response
 	 */
 	@Test(priority = 2)
-	public void test_methods_for_board_list() {
+	public void test_methods_for_board_list2() {
 
 		response =  given().auth().preemptive().basic("su", "root_pass").get("/board.json");
 		Assert.assertEquals(response.statusCode(), 200);
@@ -56,7 +56,7 @@ public class RestServiceTestForBoard2 {
 	 * @throws ParseException 
 	 */
 	@Test(priority = 1)
-	public void test_response_for_new_board() throws ParseException {
+	public void test_response_for_new_board2() throws ParseException {
 		response =  given().auth().preemptive().basic("su", "root_pass").get("/board/new.json");
 		Assert.assertEquals(response.statusCode(), 200);
 		Assert.assertEquals(response.statusLine(), "HTTP/1.1 200 OK");
@@ -75,7 +75,7 @@ public class RestServiceTestForBoard2 {
 	 * check response for board with specific id
 	 */
 	@Test(priority = 6)
-	public void test_response_board_with_id() {
+	public void test_response_board_with_id2() {
 		response =  given().auth().preemptive().basic("su", "root_pass").get("/board/"+id+".json");
 		Assert.assertEquals(response.statusCode(), 200);
 		Assert.assertEquals(response.statusLine(), "HTTP/1.1 200 OK");
@@ -96,7 +96,7 @@ public class RestServiceTestForBoard2 {
 	 */
 	@SuppressWarnings("unchecked")
 	@Test(priority = 3)
-	public void test_response_for_new_player() {
+	public void test_response_for_new_player2() {
 		InputStream input = this.getClass().getClassLoader().getResourceAsStream("test.json");
 		JSONParser jsonParser = new JSONParser();
 		JSONObject jsonObject = null;
@@ -122,7 +122,7 @@ public class RestServiceTestForBoard2 {
 	 * @throws ParseException 
 	 */
 	@Test(priority = 5)
-	public void test_response_for_player_at_id() throws ParseException {
+	public void test_response_for_player_at_id2() throws ParseException {
 		response= given().auth().preemptive().basic("su", "root_pass").get("/player/"+id2+".json");
 		Assert.assertEquals(response.statusCode(), 200);
 	//	System.out.println(response.asString());
@@ -143,11 +143,8 @@ public class RestServiceTestForBoard2 {
 	 * Moving player with id
 	 */
 	@Test(priority=4)
-	public void test_response_move_player(){
+	public void test_response_move_player2(){
 		response=  given().auth().preemptive().basic("su", "root_pass").get("/move/"+id+".json?player_id="+id2);
 		Assert.assertEquals(response.statusCode(), 200);
-		
-		response=  given().auth().preemptive().basic("su", "root_pass").get("/move/1.json?player_id=1");
-		Assert.assertEquals(response.statusCode(), 500);//player not present at id 1
 	}
 }
