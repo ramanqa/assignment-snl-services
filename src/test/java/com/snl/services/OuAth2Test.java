@@ -88,14 +88,15 @@ public class OuAth2Test {
 			Assert.assertEquals(response.statusLine(), "HTTP/1.1 200 OK");
 			// System.out.println(response.asString());
 
-			response = given().auth().oauth2(accessToken).put("/board/7.json").andReturn();
+			response = given().auth().oauth2(accessToken).put("/board/"+id+".json").andReturn();
 			// System.out.println(response.asString());
 
 		
-			  response = given().auth().oauth2(accessToken).delete("/board/310.json");
-			  Assert.assertEquals(response.statusCode(), 500);//on deleting the board internal error will occur on accessing status
+			  response = given().auth().oauth2(accessToken).delete("/board/"+id+".json");
+			  Assert.assertEquals(response.statusCode(), 200);
 			//  System.out.println(response.andReturn().asString());
-			
+			  response = given().auth().oauth2(accessToken).delete("/board/"+id+".json");
+			  Assert.assertEquals(response.statusCode(), 500);// Board already deleted in previous statement
 		}
 
 		/**

@@ -81,14 +81,15 @@ public class RestServiceTestForBoard2 {
 		Assert.assertEquals(response.statusLine(), "HTTP/1.1 200 OK");
 		// System.out.println(response.asString());
 
-		response =  given().auth().preemptive().basic("su", "root_pass").put("/board/7.json").andReturn();
+		response =  given().auth().preemptive().basic("su", "root_pass").put("/board/"+id+".json").andReturn();
 		// System.out.println(response.asString());
 
 	
-		  response = given().auth().preemptive().basic("su", "root_pass").delete("/board/310.json");
-		  Assert.assertEquals(response.statusCode(), 500);//on deleting the board internal error will occur on accessing status
+		  response = given().auth().preemptive().basic("su", "root_pass").delete("/board/"+id+".json");
+		  Assert.assertEquals(response.statusCode(), 200);
 		//  System.out.println(response.andReturn().asString());
-		
+		  response = given().auth().preemptive().basic("su", "root_pass").delete("/board/"+id+".json");
+		  Assert.assertEquals(response.statusCode(), 500);// Board already deleted in previous statement
 	}
 
 	/**
