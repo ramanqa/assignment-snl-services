@@ -10,7 +10,9 @@ import javax.net.ssl.HttpsURLConnection;
 
 import org.testng.annotations.Test;
 import com.jayway.restassured.http.ContentType;
+import com.google.gson.Gson;
 import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.Option;
 import com.jayway.restassured.response.Response;
@@ -45,6 +47,15 @@ import static org.junit.Assert.assertThat;
 import org.testng.annotations.Test;
 
 public class SNL {
+	
+	public int board_id;
+	public int player_id;
+	public void detail(int pid)
+	{
+		player_id=pid;
+	}
+	
+	
   @Test
   public void Test_Response_code() throws MalformedURLException 
   {
@@ -53,8 +64,48 @@ public class SNL {
 		given().when().get(url1).then().statusCode(200);
   }
   
+  
+  
+  	@Test(priority=1)
+  	public void create_board_with_player() throws UnsupportedEncodingException
+  	{
+  		Integer pid;
+  		HttpClient httpClient = new DefaultHttpClient();
+  		Response response1=get("http://10.0.1.86/snl/rest/v1/board/new.json");
+  		final String  JSON_DOCUMENT	=	 response1.getBody().asString(); 
+  		Integer result = parse(JSON_DOCUMENT).read("$.response.board.id");
+  		System.out.println("@@@@@@@@@@@"+result);
+  		try {
+	        HttpPost postRequest = new HttpPost("http://10.0.1.86/snl/rest/v1/player.json");
+	        postRequest.setHeader("Content-type", "application/json");
+	        /*StringEntity entity = new StringEntity("{\"board\":\""+result+"\", \"player\": {\"name\": \"Shubham1\"}}");
+	        postRequest.setEntity(entity);
+	         pid = parse(JSON_DOCUMENT).read("$.response.board.players[0].id");
+	         System.out.println("&&&&&"+pid);*/
+	         //detail(pid);
+	        HttpResponse response = httpClient.execute(postRequest);
+	        InputStream is = response.getEntity().getContent();
+	        Reader reader = new InputStreamReader(is);
+	        BufferedReader bufferedReader = new BufferedReader(reader);
+	        StringBuilder builder = new StringBuilder();
+	        
+  		} 
+	    catch (Exception ex) {
+	        ex.printStackTrace();
+	    }
+  		 board_id=result;
+	     //System.out.println("#####"+player_id);
+  		 given().when().get("http://10.0.1.86/snl/rest/v1/board/"+board_id+".json").then().statusCode(200);
+	  }
+  	
+
+  
    
- @Test
+  
+  
+  /*Add more player*/
+   
+ @Test(priority=2)
   public void player() throws IOException 
   {
 	
@@ -63,15 +114,20 @@ public class SNL {
 	    try {
 	        HttpPost postRequest = new HttpPost("http://10.0.1.86/snl/rest/v1/player.json");
 	        postRequest.setHeader("Content-type", "application/json");
-	        StringEntity entity = new StringEntity("{\"board\":\"160\", \"player\": {\"name\": \"Shubham\"}}");
-	        postRequest.setEntity(entity);
-	        StringEntity entity2 = new StringEntity("{\"board\":\"160\", \"player\": {\"name\": \"Chandu\"}}");
+	         StringEntity entity2 = new StringEntity("{\"board\":\""+board_id+"\", \"player\": {\"name\": \"Chaman\"}}");
 	        postRequest.setEntity(entity2);
 	        HttpResponse response = httpClient.execute(postRequest);
 	        InputStream is = response.getEntity().getContent();
 	        Reader reader = new InputStreamReader(is);
+	        Response response1=get("http://10.0.1.86/snl/rest/v1/board/"+board_id+".json") ;
+	        final String  JSON_DOCUMENT	=	 response1.getBody().asString();
 	        BufferedReader bufferedReader = new BufferedReader(reader);
 	        StringBuilder builder = new StringBuilder();
+	        Integer pid = parse(JSON_DOCUMENT).read("$.response.board.players[0].id");
+	         System.out.println("&&&&&"+pid);
+	         detail(pid);
+	        
+	        
 	        } 
 	    catch (Exception ex) {
 	        ex.printStackTrace();
@@ -79,41 +135,47 @@ public class SNL {
   
 	    }
   
-		@Test
+		@Test(priority=7)
 		public void Delete_player() throws IOException
 		{
-			URL url = new URL("http://10.0.1.86/snl/rest/player/564.json");
+			URL url = new URL("http://10.0.1.86/snl/rest/player/"+player_id+".json");
 			HttpURLConnection httpURLConnection = null;
 			 httpURLConnection = (HttpURLConnection) url.openConnection();
 			   /* httpURLConnection.setRequestProperty("Content-Type",
 			                "application/x-www-form-urlencoded");*/
 			    httpURLConnection.setRequestMethod("DELETE");
-			    System.out.println("@@@@@##@@@@"+httpURLConnection.getResponseCode());
+			    //System.out.println("@@@@@##@@@@"+httpURLConnection.getResponseCode());
 			    Assert.assertEquals(404, httpURLConnection.getResponseCode());
 			
 			} 
 		
 	 
-		  @Test
+		  @Test(priority=6)
 		  public void move() throws IOException 
 		  {
-			
-			  URL url=new URL("http://10.0.1.86/snl/rest/v1/move/122.json?player_id=65");
+			System.out.println("!!!!!!! "+board_id+ " !!!!!!!"+player_id);
+			  URL url=new URL("http://10.0.1.86/snl/rest/v1/move/"+board_id+".json?player_id="+player_id+"");
 			  Response res=get(url);
 			  given().when().get(url).then().statusCode(200);
+			  final String  JSON_DOCUMENT	=	 res.getBody().asString(); 
+		 		Integer result = parse(JSON_DOCUMENT).read("$.response.player.position");
+		 		
 			  }
-		@Test(priority=2)
+		
+		  
+		  /*Test for blank move i.e player position remains constant after a move */
+		  
+		  @Test(priority=5)
 	      public void blank_move() throws IOException
 	
 	      {
-	    	  Response response=get("http://10.0.1.86/snl/rest/v1/move/122.json?player_id=65");
-	    	  final String  JSON_DOCUMENT	=	 response.getBody().asString(); 
-	 		 
-	 		 String ver=null;
-
+			 
+	    	Response response=get("http://10.0.1.86/snl/rest/v1/move/"+board_id+".json?player_id="+player_id+"");
+	    	final String  JSON_DOCUMENT	=	 response.getBody().asString(); 
+	 		String ver=null;
 	 		Integer result = parse(JSON_DOCUMENT).read("$.response.player.position");
 	 		System.out.println("#######"+result);
-	 		given().when().get("http://10.0.1.86/snl/rest/v1/move/122.json?player_id=65").then().statusCode(200);
+	 		given().when().get("http://10.0.1.86/snl/rest/v1/move/"+board_id+".json?player_id="+player_id+"").then().statusCode(200);
 	 		Integer result2= parse(JSON_DOCUMENT).read("$.response.player.position");
 	 		System.out.println("@@@@@@@@@@"+result);
 	 		Integer Roll =parse(JSON_DOCUMENT).read("$.response.roll");
@@ -123,18 +185,20 @@ public class SNL {
 	 		{
 	 			Assert.assertEquals(result,result2);
 	 		}
-	      }
+	    }
 	 		
-	 		@Test(priority=1)
+		  
+		  /*Test cases for ladder move*/ 
+	 		@Test(priority=3)
 	 		public void ladder_move() throws IOException
 	 		
 		      {
-		    	  Response response=get("http://10.0.1.86/snl/rest/v1/move/160.json?player_id=122");
+		    	  Response response=get("http://10.0.1.86/snl/rest/v1/move/"+board_id+".json?player_id="+player_id+"");
 		    	  final String  JSON_DOCUMENT	=	 response.getBody().asString(); 
 		 		  String ver=null;
 		 		  Integer pos1 = parse(JSON_DOCUMENT).read("$.response.player.position");
 		 		  
-		 		 given().when().get("http://10.0.1.86/snl/rest/v1/move/160.json?player_id=122").then().statusCode(200);
+		 		 given().when().get("http://10.0.1.86/snl/rest/v1/move/"+board_id+".json?player_id="+player_id+"").then().statusCode(200);
 		 		 
 		 		Integer pos2= parse(JSON_DOCUMENT).read("$.response.player.position");
 		 		Integer Roll =parse(JSON_DOCUMENT).read("$.response.roll");
@@ -144,23 +208,27 @@ public class SNL {
 		 			Assert.assertEquals(16, "+pos2+");
 		 		if(pos1==0&&Roll==5)
 		 			Assert.assertEquals(7, "+pos2+");
-		 		
-		 		
 		 		System.out.println("@@@@@@@@@@"+Roll);
 		 		
 	 		
 	      }
 	 		
-	 		//@Test
+	 		
+	 		
+	 		
+	 		
+	 		/*Test cases for Snake move*/ 
+	 		 		
+	 	    @Test(priority=4)
 	 		public void Snake_move() throws IOException
 	 		
 		      {
-		    	  Response response=get("http://10.0.1.86/snl/rest/v1/move/160.json?player_id=122");
+		    	  Response response=get("http://10.0.1.86/snl/rest/v1/move/"+board_id+".json?player_id="+player_id+"");
 		    	  final String  JSON_DOCUMENT	=	 response.getBody().asString(); 
 		 		  String ver=null;
 		 		  Integer pos1 = parse(JSON_DOCUMENT).read("$.response.player.position");
 		 		  
-		 		 given().when().get("http://10.0.1.86/snl/rest/v1/move/160.json?player_id=122").then().statusCode(200);
+		 		 given().when().get("http://10.0.1.86/snl/rest/v1/move/"+board_id+".json?player_id="+player_id+"").then().statusCode(200);
 		 		 
 		 		Integer pos2= parse(JSON_DOCUMENT).read("$.response.player.position");
 		 		Integer Roll =parse(JSON_DOCUMENT).read("$.response.roll");
@@ -169,9 +237,8 @@ public class SNL {
 		 	
 		 		
 		 		System.out.println("@@@@@@@@@@"+Roll);
-		 		
-	 		
-	      }
+		  		
+	       }
 		
 }
 
