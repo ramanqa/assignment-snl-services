@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="6" started-at="2017-07-13T09:17:03Z" finished-at="2017-07-13T09:17:03Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="6" started-at="2017-07-13T09:17:03Z" finished-at="2017-07-13T09:17:03Z">
+      <class name="web_service_test.assignment_snl_services.AppTest">
+        <test-method status="PASS" signature="testApp()[pri:0, instance:testApp(web_service_test.assignment_snl_services.AppTest)]" name="testApp" duration-ms="1" started-at="2017-07-13T14:47:03Z" finished-at="2017-07-13T14:47:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testApp -->
+      </class> <!-- web_service_test.assignment_snl_services.AppTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>
