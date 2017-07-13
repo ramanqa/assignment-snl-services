@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="16" passed="16">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="4948" started-at="2017-07-13T12:39:16Z" finished-at="2017-07-13T12:39:21Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="4948" started-at="2017-07-13T12:39:16Z" finished-at="2017-07-13T12:39:21Z">
+      <class name="snl_webservice.web_sercice.v2Test">
+        <test-method status="PASS" signature="Board_create_new_board()[pri:1, instance:snl_webservice.web_sercice.v2Test@c038203]" name="Board_create_new_board" duration-ms="2286" started-at="2017-07-13T18:09:16Z" finished-at="2017-07-13T18:09:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Board_create_new_board -->
+        <test-method status="PASS" signature="get_list_of_borad()[pri:2, instance:snl_webservice.web_sercice.v2Test@c038203]" name="get_list_of_borad" duration-ms="341" started-at="2017-07-13T18:09:19Z" finished-at="2017-07-13T18:09:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_list_of_borad -->
+        <test-method status="PASS" signature="player_join_player_to_board()[pri:3, instance:snl_webservice.web_sercice.v2Test@c038203]" name="player_join_player_to_board" duration-ms="191" started-at="2017-07-13T18:09:19Z" finished-at="2017-07-13T18:09:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- player_join_player_to_board -->
+        <test-method status="PASS" signature="get_id()[pri:4, instance:snl_webservice.web_sercice.v2Test@c038203]" name="get_id" duration-ms="162" started-at="2017-07-13T18:09:19Z" finished-at="2017-07-13T18:09:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_id -->
+        <test-method status="PASS" signature="player_get_player_details()[pri:5, instance:snl_webservice.web_sercice.v2Test@c038203]" name="player_get_player_details" duration-ms="193" started-at="2017-07-13T18:09:19Z" finished-at="2017-07-13T18:09:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- player_get_player_details -->
+        <test-method status="PASS" signature="player_update_player_details()[pri:6, instance:snl_webservice.web_sercice.v2Test@c038203]" name="player_update_player_details" duration-ms="382" started-at="2017-07-13T18:09:20Z" finished-at="2017-07-13T18:09:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- player_update_player_details -->
+        <test-method status="PASS" signature="Move_player_by_id_in_Board()[pri:7, instance:snl_webservice.web_sercice.v2Test@c038203]" name="Move_player_by_id_in_Board" duration-ms="292" started-at="2017-07-13T18:09:20Z" finished-at="2017-07-13T18:09:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Move_player_by_id_in_Board -->
+        <test-method status="PASS" signature="player_delete_player()[pri:8, instance:snl_webservice.web_sercice.v2Test@c038203]" name="player_delete_player" duration-ms="86" started-at="2017-07-13T18:09:20Z" finished-at="2017-07-13T18:09:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- player_delete_player -->
+      </class> <!-- snl_webservice.web_sercice.v2Test -->
+      <class name="snl_webservice.web_sercice.v1_Test">
+        <test-method status="PASS" signature="Board_create_new_board()[pri:1, instance:snl_webservice.web_sercice.v1_Test@8bd1b6a]" name="Board_create_new_board" duration-ms="123" started-at="2017-07-13T18:09:20Z" finished-at="2017-07-13T18:09:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Board_create_new_board -->
+        <test-method status="PASS" signature="get_list_of_borad()[pri:2, instance:snl_webservice.web_sercice.v1_Test@8bd1b6a]" name="get_list_of_borad" duration-ms="275" started-at="2017-07-13T18:09:21Z" finished-at="2017-07-13T18:09:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_list_of_borad -->
+        <test-method status="PASS" signature="player_join_player_to_board()[pri:3, instance:snl_webservice.web_sercice.v1_Test@8bd1b6a]" name="player_join_player_to_board" duration-ms="64" started-at="2017-07-13T18:09:21Z" finished-at="2017-07-13T18:09:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- player_join_player_to_board -->
+        <test-method status="PASS" signature="get_id()[pri:4, instance:snl_webservice.web_sercice.v1_Test@8bd1b6a]" name="get_id" duration-ms="70" started-at="2017-07-13T18:09:21Z" finished-at="2017-07-13T18:09:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_id -->
+        <test-method status="PASS" signature="player_get_player_details()[pri:5, instance:snl_webservice.web_sercice.v1_Test@8bd1b6a]" name="player_get_player_details" duration-ms="55" started-at="2017-07-13T18:09:21Z" finished-at="2017-07-13T18:09:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- player_get_player_details -->
+        <test-method status="PASS" signature="player_update_player_details()[pri:6, instance:snl_webservice.web_sercice.v1_Test@8bd1b6a]" name="player_update_player_details" duration-ms="106" started-at="2017-07-13T18:09:21Z" finished-at="2017-07-13T18:09:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- player_update_player_details -->
+        <test-method status="PASS" signature="Move_player_by_id_in_Board()[pri:7, instance:snl_webservice.web_sercice.v1_Test@8bd1b6a]" name="Move_player_by_id_in_Board" duration-ms="199" started-at="2017-07-13T18:09:21Z" finished-at="2017-07-13T18:09:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Move_player_by_id_in_Board -->
+        <test-method status="PASS" signature="player_delete_player()[pri:8, instance:snl_webservice.web_sercice.v1_Test@8bd1b6a]" name="player_delete_player" duration-ms="79" started-at="2017-07-13T18:09:21Z" finished-at="2017-07-13T18:09:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- player_delete_player -->
+      </class> <!-- snl_webservice.web_sercice.v1_Test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
