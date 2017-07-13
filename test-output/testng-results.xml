@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+<testng-results skipped="0" failed="0" ignored="2" total="7" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="181745" started-at="2017-07-12T13:33:33Z" finished-at="2017-07-12T13:36:35Z">
+  <suite name="Default suite" duration-ms="671" started-at="2017-07-13T05:54:46Z" finished-at="2017-07-13T05:54:47Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="181745" started-at="2017-07-12T13:33:33Z" finished-at="2017-07-12T13:36:35Z">
+    <test name="Default test" duration-ms="671" started-at="2017-07-13T05:54:46Z" finished-at="2017-07-13T05:54:47Z">
       <class name="web_service_test.assignment_snl_services.NewTest">
-        <test-method status="PASS" signature="deleteboard()[pri:0, instance:web_service_test.assignment_snl_services.NewTest@4501b7af]" name="deleteboard" duration-ms="181725" started-at="2017-07-12T19:03:33Z" finished-at="2017-07-12T19:06:35Z">
+        <test-method status="PASS" signature="check_board_creation()[pri:0, instance:web_service_test.assignment_snl_services.NewTest@4501b7af]" name="check_board_creation" duration-ms="152" started-at="2017-07-13T11:24:46Z" finished-at="2017-07-13T11:24:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- check_board_creation -->
+        <test-method status="PASS" signature="player_add_check()[pri:0, instance:web_service_test.assignment_snl_services.NewTest@4501b7af]" name="player_add_check" duration-ms="331" started-at="2017-07-13T11:24:46Z" depends-on-methods="web_service_test.assignment_snl_services.NewTest.check_board_creation" finished-at="2017-07-13T11:24:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- player_add_check -->
+        <test-method status="PASS" signature="check_player_details()[pri:0, instance:web_service_test.assignment_snl_services.NewTest@4501b7af]" name="check_player_details" duration-ms="46" started-at="2017-07-13T11:24:46Z" depends-on-methods="web_service_test.assignment_snl_services.NewTest.player_add_check" finished-at="2017-07-13T11:24:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- check_player_details -->
+        <test-method status="PASS" signature="update_player()[pri:0, instance:web_service_test.assignment_snl_services.NewTest@4501b7af]" name="update_player" duration-ms="36" started-at="2017-07-13T11:24:47Z" depends-on-methods="web_service_test.assignment_snl_services.NewTest.check_player_details" finished-at="2017-07-13T11:24:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- update_player -->
+        <test-method status="PASS" signature="deleteboard()[pri:0, instance:web_service_test.assignment_snl_services.NewTest@4501b7af]" name="deleteboard" duration-ms="79" started-at="2017-07-13T11:24:47Z" depends-on-methods="web_service_test.assignment_snl_services.NewTest.update_player" finished-at="2017-07-13T11:24:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteboard -->
