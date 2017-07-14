@@ -31,6 +31,13 @@ public class Back_Board_help {
 
 	public HttpURLConnection getConnection(String urls, String type) throws IOException {
 
+		if (opt.readit("version").equals("v3")) {
+			urls = urls + "?access_token=" + opt.readit("access_token");
+		}
+		
+		System.err.println(urls);
+		
+
 		URL url = new URL(urls);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setRequestMethod(type);
@@ -49,10 +56,17 @@ public class Back_Board_help {
 	public HttpURLConnection addplayer_post_call(String Board, String name) {
 
 		String message = "{\"board\":\"" + Board + "\",\"player\":{\"name\": \"" + name + "\"}}";
+
 		try {
 			// instantiate the URL object with the target URL of the resource to
 			// request
-			URL url = new URL(opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/player.json");
+
+			String urls = opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/player.json";
+
+			if (opt.readit("version").equals("v3")) {
+				urls = urls + "?access_token=" + opt.readit("access_token");
+			}
+			URL url = new URL(urls);
 
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			if (opt.readit("version").equals("v2")) {
@@ -73,7 +87,7 @@ public class Back_Board_help {
 
 			return connection;
 		} catch (IOException e) {
-			// ...
+			e.printStackTrace();
 		}
 		return null;
 
@@ -85,7 +99,13 @@ public class Back_Board_help {
 		try {
 			// instantiate the URL object with the target URL of the resource to
 			// request
-			URL url = new URL(opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/player/" + player_id + ".json");
+
+			String urls = opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/player/" + player_id + ".json";
+
+			if (opt.readit("version").equals("v3")) {
+				urls = urls + "?access_token=" + opt.readit("access_token");
+			}
+			URL url = new URL(urls);
 
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
@@ -117,7 +137,13 @@ public class Back_Board_help {
 		try {
 			// instantiate the URL object with the target URL of the resource to
 			// request
-			URL url = new URL(opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/player/" + player_id + ".json");
+
+			String urls = opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/player/" + player_id + ".json";
+
+			if (opt.readit("version").equals("v3")) {
+				urls = urls + "?access_token=" + opt.readit("access_token");
+			}
+			URL url = new URL(urls);
 
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
@@ -144,8 +170,15 @@ public class Back_Board_help {
 		try {
 			// instantiate the URL object with the target URL of the resource to
 			// request
-			URL url = new URL(opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/move/" + board
-					+ ".json?player_id=" + player_id);
+
+			String urls = opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/move/" + board
+					+ ".json?player_id=" + player_id;
+
+			if (opt.readit("version").equals("v3")) {
+				urls = urls + "?access_token=" + opt.readit("access_token");
+			}
+
+			URL url = new URL(urls);
 
 			System.out.println(url.toString());
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -169,7 +202,14 @@ public class Back_Board_help {
 
 	public HttpURLConnection deleteboard(int Board_id) throws IOException {
 
-		URL url = new URL(opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/board/" + Board_id + ".json");
+		String urls = opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/board/" + Board_id + ".json";
+
+		if (opt.readit("version").equals("v3")) {
+			urls = urls + "?access_token=" + opt.readit("access_token");
+		}
+
+		URL url = new URL(urls);
+
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setRequestMethod("DELETE");
 		conn.setDoOutput(true);
