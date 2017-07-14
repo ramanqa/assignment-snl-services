@@ -1,36 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="19" passed="19">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2827" started-at="2017-07-12T12:59:29Z" finished-at="2017-07-12T12:59:31Z">
+  <suite name="Default suite" duration-ms="6002" started-at="2017-07-14T10:53:07Z" finished-at="2017-07-14T10:53:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="2827" started-at="2017-07-12T12:59:29Z" finished-at="2017-07-12T12:59:31Z">
-      <class name="com.web_snl.SNL_project.SNL">
-        <test-method status="PASS" signature="Delete_player()[pri:0, instance:com.web_snl.SNL_project.SNL@4c70fda8]" name="Delete_player" duration-ms="232" started-at="2017-07-12T18:29:29Z" finished-at="2017-07-12T18:29:29Z">
+    <test name="Default test" duration-ms="6002" started-at="2017-07-14T10:53:07Z" finished-at="2017-07-14T10:53:13Z">
+      <class name="com.web_snl.SNL_project.V3_Test">
+        <test-method status="PASS" signature="create_token()[pri:0, instance:com.web_snl.SNL_project.V3_Test@2e4b8173]" name="create_token" is-config="true" duration-ms="2201" started-at="2017-07-14T16:23:07Z" finished-at="2017-07-14T16:23:09Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Delete_player -->
-        <test-method status="PASS" signature="Test_Response_code()[pri:0, instance:com.web_snl.SNL_project.SNL@4c70fda8]" name="Test_Response_code" duration-ms="1626" started-at="2017-07-12T18:29:29Z" finished-at="2017-07-12T18:29:31Z">
+        </test-method> <!-- create_token -->
+        <test-method status="PASS" signature="create_board()[pri:1, instance:com.web_snl.SNL_project.V3_Test@2e4b8173]" name="create_board" duration-ms="98" started-at="2017-07-14T16:23:09Z" finished-at="2017-07-14T16:23:09Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test_Response_code -->
-        <test-method status="PASS" signature="move()[pri:0, instance:com.web_snl.SNL_project.SNL@4c70fda8]" name="move" duration-ms="226" started-at="2017-07-12T18:29:31Z" finished-at="2017-07-12T18:29:31Z">
+        </test-method> <!-- create_board -->
+        <test-method status="PASS" signature="create_player()[pri:2, instance:com.web_snl.SNL_project.V3_Test@2e4b8173]" name="create_player" duration-ms="101" started-at="2017-07-14T16:23:10Z" finished-at="2017-07-14T16:23:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_player -->
+        <test-method status="PASS" signature="list_of_board()[pri:3, instance:com.web_snl.SNL_project.V3_Test@2e4b8173]" name="list_of_board" duration-ms="778" started-at="2017-07-14T16:23:10Z" finished-at="2017-07-14T16:23:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- list_of_board -->
+        <test-method status="PASS" signature="move()[pri:4, instance:com.web_snl.SNL_project.V3_Test@2e4b8173]" name="move" duration-ms="114" started-at="2017-07-14T16:23:11Z" finished-at="2017-07-14T16:23:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- move -->
-        <test-method status="PASS" signature="player()[pri:0, instance:com.web_snl.SNL_project.SNL@4c70fda8]" name="player" duration-ms="97" started-at="2017-07-12T18:29:31Z" finished-at="2017-07-12T18:29:31Z">
+        <test-method status="PASS" signature="update_player()[pri:4, instance:com.web_snl.SNL_project.V3_Test@2e4b8173]" name="update_player" duration-ms="270" started-at="2017-07-14T16:23:11Z" finished-at="2017-07-14T16:23:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- update_player -->
+      </class> <!-- com.web_snl.SNL_project.V3_Test -->
+      <class name="com.web_snl.SNL_project.V2_test">
+        <test-method status="PASS" signature="Http_Auth_test1()[pri:0, instance:com.web_snl.SNL_project.V2_test@70e8f8e]" name="Http_Auth_test1" duration-ms="277" started-at="2017-07-14T16:23:09Z" finished-at="2017-07-14T16:23:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Http_Auth_test1 -->
+        <test-method status="PASS" signature="add_player_Test()[pri:0, instance:com.web_snl.SNL_project.V2_test@70e8f8e]" name="add_player_Test" duration-ms="123" started-at="2017-07-14T16:23:09Z" finished-at="2017-07-14T16:23:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- add_player_Test -->
+        <test-method status="PASS" signature="update_player()[pri:0, instance:com.web_snl.SNL_project.V2_test@70e8f8e]" name="update_player" duration-ms="56" started-at="2017-07-14T16:23:09Z" finished-at="2017-07-14T16:23:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- update_player -->
+        <test-method status="PASS" signature="move()[pri:6, instance:com.web_snl.SNL_project.V2_test@70e8f8e]" name="move" duration-ms="115" started-at="2017-07-14T16:23:12Z" finished-at="2017-07-14T16:23:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- move -->
+        <test-method status="PASS" signature="Delete_player()[pri:7, instance:com.web_snl.SNL_project.V2_test@70e8f8e]" name="Delete_player" duration-ms="85" started-at="2017-07-14T16:23:12Z" finished-at="2017-07-14T16:23:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Delete_player -->
+        <test-method status="PASS" signature="Delete_board()[pri:8, instance:com.web_snl.SNL_project.V2_test@70e8f8e]" name="Delete_board" duration-ms="93" started-at="2017-07-14T16:23:12Z" finished-at="2017-07-14T16:23:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Delete_board -->
+      </class> <!-- com.web_snl.SNL_project.V2_test -->
+      <class name="com.web_snl.SNL_project.SNL">
+        <test-method status="PASS" signature="Test_Response_code()[pri:0, instance:com.web_snl.SNL_project.SNL@17046283]" name="Test_Response_code" duration-ms="105" started-at="2017-07-14T16:23:09Z" finished-at="2017-07-14T16:23:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_Response_code -->
+        <test-method status="PASS" signature="create_board_with_player()[pri:1, instance:com.web_snl.SNL_project.SNL@17046283]" name="create_board_with_player" duration-ms="377" started-at="2017-07-14T16:23:09Z" finished-at="2017-07-14T16:23:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_board_with_player -->
+        <test-method status="PASS" signature="player()[pri:2, instance:com.web_snl.SNL_project.SNL@17046283]" name="player" duration-ms="192" started-at="2017-07-14T16:23:10Z" finished-at="2017-07-14T16:23:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- player -->
-        <test-method status="PASS" signature="ladder_move()[pri:1, instance:com.web_snl.SNL_project.SNL@4c70fda8]" name="ladder_move" duration-ms="388" started-at="2017-07-12T18:29:31Z" finished-at="2017-07-12T18:29:31Z">
+        <test-method status="PASS" signature="ladder_move()[pri:3, instance:com.web_snl.SNL_project.SNL@17046283]" name="ladder_move" duration-ms="263" started-at="2017-07-14T16:23:11Z" finished-at="2017-07-14T16:23:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ladder_move -->
-        <test-method status="PASS" signature="blank_move()[pri:2, instance:com.web_snl.SNL_project.SNL@4c70fda8]" name="blank_move" duration-ms="229" started-at="2017-07-12T18:29:31Z" finished-at="2017-07-12T18:29:31Z">
+        <test-method status="PASS" signature="Snake_move()[pri:4, instance:com.web_snl.SNL_project.SNL@17046283]" name="Snake_move" duration-ms="217" started-at="2017-07-14T16:23:12Z" finished-at="2017-07-14T16:23:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- blank_move -->
+        </test-method> <!-- Snake_move -->
+        <test-method status="PASS" signature="move()[pri:6, instance:com.web_snl.SNL_project.SNL@17046283]" name="move" duration-ms="254" started-at="2017-07-14T16:23:12Z" finished-at="2017-07-14T16:23:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- move -->
+        <test-method status="PASS" signature="Delete_player()[pri:7, instance:com.web_snl.SNL_project.SNL@17046283]" name="Delete_player" duration-ms="114" started-at="2017-07-14T16:23:12Z" finished-at="2017-07-14T16:23:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Delete_player -->
+        <test-method status="PASS" signature="Delete_board()[pri:9, instance:com.web_snl.SNL_project.SNL@17046283]" name="Delete_board" duration-ms="84" started-at="2017-07-14T16:23:12Z" finished-at="2017-07-14T16:23:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Delete_board -->
       </class> <!-- com.web_snl.SNL_project.SNL -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

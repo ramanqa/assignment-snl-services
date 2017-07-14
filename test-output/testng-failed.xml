@@ -3,11 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.web_snl.SNL_project.SNL">
+      <class name="com.web_snl.SNL_project.V3_Test">
         <methods>
-          <include name="ladder_move"/>
+          <include name="create_token"/>
+          <include name="update_player"/>
         </methods>
-      </class> <!-- com.web_snl.SNL_project.SNL -->
+      </class> <!-- com.web_snl.SNL_project.V3_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
