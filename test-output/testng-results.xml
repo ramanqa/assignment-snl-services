@@ -1,21 +1,376 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="10" total="11" passed="1">
+<testng-results skipped="10" failed="1" ignored="0" total="11" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="173" started-at="2017-07-13T11:30:29Z" finished-at="2017-07-13T11:30:29Z">
+  <suite name="Default suite" duration-ms="196" started-at="2017-07-14T04:48:15Z" finished-at="2017-07-14T04:48:15Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="173" started-at="2017-07-13T11:30:29Z" finished-at="2017-07-13T11:30:29Z">
-      <class name="web_service_test.assignment_snl_services.Boardv2Test">
-        <test-method status="PASS" signature="init()[pri:0, instance:web_service_test.assignment_snl_services.Boardv2Test@59f99ea]" name="init" is-config="true" duration-ms="9" started-at="2017-07-13T17:00:29Z" finished-at="2017-07-13T17:00:29Z">
+    <test name="Default test" duration-ms="196" started-at="2017-07-14T04:48:15Z" finished-at="2017-07-14T04:48:15Z">
+      <class name="web_service_test.assignment_snl_services.BoardTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222]" name="init" is-config="true" duration-ms="9" started-at="2017-07-14T10:18:15Z" finished-at="2017-07-14T10:18:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="check_board_creation()[pri:0, instance:web_service_test.assignment_snl_services.Boardv2Test@59f99ea]" name="check_board_creation" duration-ms="143" started-at="2017-07-13T17:00:29Z" finished-at="2017-07-13T17:00:29Z">
+        <test-method status="FAIL" signature="check_board_creation()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222]" name="check_board_creation" duration-ms="158" started-at="2017-07-14T10:18:15Z" finished-at="2017-07-14T10:18:15Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[
+Expecting:
+ <401>
+to be equal to:
+ <200>
+but was not.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 
+Expecting:
+ <401>
+to be equal to:
+ <200>
+but was not.
+	at web_service_test.assignment_snl_services.BoardTest.check_board_creation(BoardTest.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- check_board_creation -->
-      </class> <!-- web_service_test.assignment_snl_services.Boardv2Test -->
+        <test-method status="SKIP" signature="player_add_check()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222]" name="player_add_check" duration-ms="0" started-at="2017-07-14T10:18:15Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.check_board_creation" finished-at="2017-07-14T10:18:15Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method BoardTest.player_add_check()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method BoardTest.player_add_check()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1084)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- player_add_check -->
+        <test-method status="SKIP" signature="board_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222]" name="board_details" duration-ms="0" started-at="2017-07-14T10:18:15Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T10:18:15Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method BoardTest.board_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method BoardTest.board_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1084)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- board_details -->
+        <test-method status="SKIP" signature="board_invalid_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222]" name="board_invalid_details" duration-ms="0" started-at="2017-07-14T10:18:15Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T10:18:15Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method BoardTest.board_invalid_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method BoardTest.board_invalid_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1084)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- board_invalid_details -->
+        <test-method status="SKIP" signature="check_inavlid_player_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222]" name="check_inavlid_player_details" duration-ms="0" started-at="2017-07-14T10:18:15Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T10:18:15Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method BoardTest.check_inavlid_player_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method BoardTest.check_inavlid_player_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1084)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- check_inavlid_player_details -->
+        <test-method status="SKIP" signature="check_player_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222]" name="check_player_details" duration-ms="0" started-at="2017-07-14T10:18:15Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T10:18:15Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method BoardTest.check_player_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method BoardTest.check_player_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1084)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- check_player_details -->
+        <test-method status="SKIP" signature="update_player()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222]" name="update_player" duration-ms="0" started-at="2017-07-14T10:18:15Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.check_player_details" finished-at="2017-07-14T10:18:15Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method BoardTest.update_player()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method BoardTest.update_player()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1084)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- update_player -->
+        <test-method status="SKIP" signature="check_roll_dice()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222]" name="check_roll_dice" duration-ms="0" started-at="2017-07-14T10:18:15Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.update_player" finished-at="2017-07-14T10:18:15Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method BoardTest.check_roll_dice()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method BoardTest.check_roll_dice()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1084)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- check_roll_dice -->
+        <test-method status="SKIP" signature="delete_player()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222]" name="delete_player" duration-ms="0" started-at="2017-07-14T10:18:15Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.check_roll_dice" finished-at="2017-07-14T10:18:15Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method BoardTest.delete_player()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method BoardTest.delete_player()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1084)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delete_player -->
+        <test-method status="SKIP" signature="add_player_while_game_is_on()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222]" name="add_player_while_game_is_on" duration-ms="0" started-at="2017-07-14T10:18:15Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.delete_player" finished-at="2017-07-14T10:18:15Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method BoardTest.add_player_while_game_is_on()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method BoardTest.add_player_while_game_is_on()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1084)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- add_player_while_game_is_on -->
+        <test-method status="SKIP" signature="deleteboard()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222]" name="deleteboard" duration-ms="0" started-at="2017-07-14T10:18:15Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.add_player_while_game_is_on" finished-at="2017-07-14T10:18:15Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method BoardTest.deleteboard()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method BoardTest.deleteboard()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@26653222] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1084)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteboard -->
+      </class> <!-- web_service_test.assignment_snl_services.BoardTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

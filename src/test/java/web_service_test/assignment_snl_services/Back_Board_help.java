@@ -6,12 +6,33 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import utility.Versiondecider;
+
 public class Back_Board_help {
+	
+	
+	Versiondecider ver;
+	private String username;
+	private String password;
+
+	
+	
+	public Back_Board_help() {
+
+		ver= new Versiondecider();
+		username = "su";
+		password = "root_pass";
+		
+		
+	}
+	
 
 	HttpURLConnection getConnection(String urls, String type) throws IOException {
 
@@ -19,6 +40,14 @@ public class Back_Board_help {
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setRequestMethod(type);
 		conn.setRequestProperty("Accept", "application/json");
+		if(ver.readit("version").equals("v2"))
+		{
+			String encoded = Base64.getEncoder().encodeToString((username+":"+password).getBytes(StandardCharsets.UTF_8)); 
+			//Java 8
+			conn.setRequestProperty("Authorization", "Basic "+encoded);
+		}
+		
+		
 		return conn;
 
 	}
@@ -29,9 +58,15 @@ public class Back_Board_help {
 		try {
 			// instantiate the URL object with the target URL of the resource to
 			// request
-			URL url = new URL("http://10.0.1.86/snl/rest/v1/player.json");
+			URL url = new URL("http://10.0.1.86/snl/rest/"+ ver.readit("version")+"/player.json");
 
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+			if(ver.readit("version").equals("v2"))
+			{
+				String encoded = Base64.getEncoder().encodeToString((username+":"+password).getBytes(StandardCharsets.UTF_8)); 
+				//Java 8
+				connection.setRequestProperty("Authorization", "Basic "+encoded);
+			}
 
 			connection.setDoOutput(true);
 			connection.setRequestMethod("POST");
@@ -56,10 +91,16 @@ public class Back_Board_help {
 		try {
 			// instantiate the URL object with the target URL of the resource to
 			// request
-			URL url = new URL("http://10.0.1.86/snl/rest/v1/player/" + player_id + ".json");
+			URL url = new URL("http://10.0.1.86/snl/rest/"+ ver.readit("version")+"/player/" + player_id + ".json");
 
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
+			if(ver.readit("version").equals("v2"))
+			{
+				String encoded = Base64.getEncoder().encodeToString((username+":"+password).getBytes(StandardCharsets.UTF_8)); 
+				//Java 8
+				connection.setRequestProperty("Authorization", "Basic "+encoded);
+			}
 			connection.setDoOutput(true);
 			connection.setRequestMethod("PUT");
 
@@ -82,10 +123,16 @@ public class Back_Board_help {
 		try {
 			// instantiate the URL object with the target URL of the resource to
 			// request
-			URL url = new URL("http://10.0.1.86/snl/rest/v1/player/" + player_id + ".json");
+			URL url = new URL("http://10.0.1.86/snl/rest/"+ ver.readit("version")+"/player/" + player_id + ".json");
 
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
+			if(ver.readit("version").equals("v2"))
+			{
+				String encoded = Base64.getEncoder().encodeToString((username+":"+password).getBytes(StandardCharsets.UTF_8)); 
+				//Java 8
+				connection.setRequestProperty("Authorization", "Basic "+encoded);
+			}
 			connection.setDoOutput(true);
 			connection.setRequestMethod("DELETE");
 			connection.connect();
@@ -103,11 +150,16 @@ public class Back_Board_help {
 		try {
 			// instantiate the URL object with the target URL of the resource to
 			// request
-			URL url = new URL("http://10.0.1.86/snl/rest/v1/move/" + board + ".json?player_id=" + player_id);
+			URL url = new URL("http://10.0.1.86/snl/rest/"+ ver.readit("version")+"/move/" + board + ".json?player_id=" + player_id);
 
 			System.out.println(url.toString());
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
+			if(ver.readit("version").equals("v2"))
+			{
+				String encoded = Base64.getEncoder().encodeToString((username+":"+password).getBytes(StandardCharsets.UTF_8)); 
+				//Java 8
+				connection.setRequestProperty("Authorization", "Basic "+encoded);
+			}
 			connection.setDoOutput(true);
 			connection.setRequestMethod("GET");
 			// connection.connect();
@@ -118,6 +170,26 @@ public class Back_Board_help {
 		}
 		return null;
 
+	}
+	
+	HttpURLConnection deleteboard(int Board_id) throws IOException {
+
+		
+
+			URL url = new URL("http://10.0.1.86/snl/rest/"+ ver.readit("version")+"/board/" + Board_id + ".json");
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("DELETE");
+			conn.setDoOutput(true);
+			if(ver.readit("version").equals("v2"))
+			{
+				String encoded = Base64.getEncoder().encodeToString((username+":"+password).getBytes(StandardCharsets.UTF_8)); 
+				//Java 8
+				conn.setRequestProperty("Authorization", "Basic "+encoded);
+			}
+			conn.connect();
+			
+			return conn;
+		
 	}
 
 	JSONObject getJson(HttpURLConnection conn) throws IOException, ParseException {
