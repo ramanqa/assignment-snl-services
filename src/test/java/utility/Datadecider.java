@@ -6,10 +6,10 @@ import java.io.IOException;
 import Readers.OptionReader;
 
 
-public class Versiondecider {
+public class Datadecider {
 
 	public String readit(String Key) throws IOException {
-		String data_value = new OptionReader().optionFileReader("version");
+		String data_value = new OptionReader().optionFileReader(Key);
 
 		return data_value;
 

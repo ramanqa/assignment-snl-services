@@ -35,9 +35,10 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
+import Main_methods_BoardTest.Back_Board_help;
 import groovy.json.internal.JsonParserLax;
 import groovyjarjarantlr.Version;
-import utility.Versiondecider;
+import utility.Datadecider;
 
 public class BoardTest {
 
@@ -46,14 +47,12 @@ public class BoardTest {
 	int player_id;
 	HttpURLConnection conn;
 	Back_Board_help boardHelp;
-	Versiondecider ver;
+	Datadecider opt;
 
-	
 	@BeforeTest
-	public void init() {
+	public void init() throws IOException {
 		boardHelp = new Back_Board_help();
-		ver = new Versiondecider();
-		
+		opt = new Datadecider();
 
 	}
 
@@ -62,21 +61,15 @@ public class BoardTest {
 
 		try {
 
-			
-			conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/"+ ver.readit("version")+"/board/new.json", "GET");
+			conn = boardHelp.getConnection(
+					opt.readit("baseurl") + "//rest/" + opt.readit("version") + "/board/new.json", "GET");
 			assertThat(conn.getResponseCode()).isEqualTo(200);
-
 			JSONObject complete = boardHelp.getJson(conn);
-
 			JSONObject inner1 = (JSONObject) complete.get("response");
 			assertThat(Integer.parseInt(inner1.get("status").toString())).isEqualTo(1);
-
 			JSONObject inner2 = (JSONObject) inner1.get("board");
-
 			assertThat(Integer.parseInt(inner2.get("turn").toString())).isEqualTo(1);
-
 			Board_id = Integer.parseInt(inner2.get("id").toString());
-
 			conn.disconnect();
 
 		}
@@ -97,46 +90,38 @@ public class BoardTest {
 		conn = boardHelp.addplayer_post_call(Board_id + "", "akshay");
 		assertThat(conn.getResponseCode()).isEqualTo(200);
 		conn = boardHelp.addplayer_post_call(Board_id + "", "nishant");
-
 		jsonobj = (JSONObject) boardHelp.getJson(conn).get("response");
 		assertThat(Integer.parseInt(jsonobj.get("status").toString())).isEqualTo(1);
-
 		jsonplayer = (JSONObject) jsonobj.get("player");
 		assertThat(Integer.parseInt(jsonplayer.get("board_id").toString())).isEqualTo(Board_id);
 		assertThat(Integer.parseInt(jsonplayer.get("position").toString())).isEqualTo(0);
 		assertThat(jsonplayer.get("name")).isEqualTo("nishant");
 
 		player_id = (Integer.parseInt(jsonplayer.get("id").toString()));
-
 		conn = boardHelp.addplayer_post_call(Board_id + "", "shabaash");
 
 		jsonobj = (JSONObject) boardHelp.getJson(conn).get("response");
 		jsonplayer = (JSONObject) jsonobj.get("player");
 		assertThat(jsonplayer.get("id").toString()).isEqualTo(player_id + 1 + "");
-
 		conn = boardHelp.addplayer_post_call(Board_id + "", "shadaab");
-		// assertThat(getJson(conn).get("response")).isNotNull();
+
 		jsonobj = (JSONObject) boardHelp.getJson(conn).get("response");
 		jsonplayer = (JSONObject) jsonobj.get("player");
 		assertThat(jsonplayer.get("id").toString()).isEqualTo(player_id + 2 + "");
-
 		conn = boardHelp.addplayer_post_call(Board_id + "", "pankaj");
 		jsonobj = (JSONObject) boardHelp.getJson(conn).get("response");
 		jsonplayer = (JSONObject) jsonobj.get("player");
 		assertThat(jsonplayer.get("id").toString()).isEqualTo((player_id + 3 + ""));
-		// assertThat(getJson(conn).get("response")).isNotNull();
 
 	}
 
 	@Test(dependsOnMethods = "player_add_check")
 	void check_player_details() throws IOException, ParseException {
 
-		conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/"+ ver.readit("version")+"/player/" + player_id + ".json", "GET");
+		conn = boardHelp.getConnection(
+				opt.readit("baseurl") + "//rest/" + opt.readit("version") + "/player/" + player_id + ".json", "GET");
 		JSONObject complete = boardHelp.getJson(conn);
-
 		JSONObject response = (JSONObject) complete.get("response");
-		assertThat(response).isNotNull();
-
 		JSONObject player = (JSONObject) response.get("player");
 		assertThat(Integer.parseInt(player.get("board_id").toString())).isEqualTo(Board_id);
 
@@ -145,22 +130,21 @@ public class BoardTest {
 	@Test(dependsOnMethods = "player_add_check")
 	void check_inavlid_player_details() throws IOException, ParseException {
 
-		conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/"+ ver.readit("version")+"/player/" + 0 + ".json", "GET");
+		conn = boardHelp.getConnection(
+				opt.readit("baseurl") + "//rest/" + opt.readit("version") + "/player/" + 0 + ".json", "GET");
 		assertThat(conn.getResponseCode()).isEqualTo(404);
 
 	}
 
 	@Test(dependsOnMethods = "player_add_check")
 	void board_details() throws IOException, ParseException {
-		conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/"+ ver.readit("version")+"/board/" + Board_id + ".json", "GET");
+		conn = boardHelp.getConnection(
+				opt.readit("baseurl") + "//rest/" + opt.readit("version") + "/board/" + Board_id + ".json", "GET");
 		JSONObject response = (JSONObject) boardHelp.getJson(conn).get("response");
 		assertThat(Integer.parseInt(response.get("status").toString())).isEqualTo(1);
-
 		JSONObject board = (JSONObject) response.get("board");
-
 		String board_array = (String) board.get("layout");
 		System.out.println(board_array);
-
 		assertThat(Integer.parseInt(board.get("id").toString())).isEqualTo(Board_id);
 		assertThat(Integer.parseInt(board.get("turn").toString())).isEqualTo(1);
 
@@ -168,7 +152,8 @@ public class BoardTest {
 
 	@Test(dependsOnMethods = "player_add_check")
 	void board_invalid_details() throws IOException, ParseException {
-		conn = boardHelp.getConnection("http://10.0.1.86/snl//rest/"+ ver.readit("version")+"/board/" + 0 + ".json", "GET");
+		conn = boardHelp.getConnection(
+				opt.readit("baseurl") + "//rest/" + opt.readit("version") + "/board/" + 0 + ".json", "GET");
 		JSONObject response = (JSONObject) boardHelp.getJson(conn).get("response");
 		assertThat(Integer.parseInt(response.get("status").toString())).isEqualTo(-1);
 
@@ -179,12 +164,9 @@ public class BoardTest {
 
 		conn = boardHelp.player_modified("nishant sharma", player_id);
 		JSONObject complete = boardHelp.getJson(conn);
-
 		JSONObject response = (JSONObject) complete.get("response");
 		assertThat(Integer.parseInt(response.get("status").toString())).isEqualTo(1);
-
 		JSONObject player = (JSONObject) response.get("player");
-
 		assertThat(player.get("name")).isEqualTo("nishant sharma");
 		assertThat(Integer.parseInt(player.get("board_id").toString())).isEqualTo(Board_id);
 		assertThat(Integer.parseInt(player.get("id").toString())).isEqualTo(player_id);
@@ -227,11 +209,9 @@ public class BoardTest {
 	void delete_player() throws IOException, ParseException {
 
 		conn = boardHelp.player_deleted(player_id);
-
 		assertThat(conn.getResponseCode()).isEqualTo(200);
 		JSONObject responce = (JSONObject) boardHelp.getJson(conn).get("response");
 		String status = (String) responce.get("success");
-
 		assertThat(status).isEqualTo("OK");
 
 	}
@@ -239,12 +219,10 @@ public class BoardTest {
 	@Test(dependsOnMethods = "delete_player")
 	void add_player_while_game_is_on() throws IOException, ParseException {
 		conn = boardHelp.addplayer_post_call(Board_id + "", "akshaykumar");
-
 		JSONObject complete = boardHelp.getJson(conn);
 		JSONObject response = (JSONObject) complete.get("response");
 		assertThat(Integer.parseInt(response.get("status").toString())).isEqualTo(1);
 		JSONObject player = (JSONObject) response.get("player");
-
 		assertThat((player.get("name").toString())).isEqualTo("akshaykumar");
 		assertThat(Integer.parseInt(player.get("position").toString())).isEqualTo(0);
 
@@ -253,16 +231,12 @@ public class BoardTest {
 	@Test(dependsOnMethods = "add_player_while_game_is_on")
 	void deleteboard() throws IOException, ParseException {
 
-	
-			conn = boardHelp.deleteboard(Board_id);
-
-			assertThat(conn.getResponseCode()).isEqualTo(200);
-			JSONObject responce = (JSONObject) boardHelp.getJson(conn).get("response");
-			String status = (String) responce.get("success");
-
-			assertThat(status).isEqualTo("OK");
-
-			conn.disconnect();
+		conn = boardHelp.deleteboard(Board_id);
+		assertThat(conn.getResponseCode()).isEqualTo(200);
+		JSONObject responce = (JSONObject) boardHelp.getJson(conn).get("response");
+		String status = (String) responce.get("success");
+		assertThat(status).isEqualTo("OK");
+		conn.disconnect();
 
 	}
 
