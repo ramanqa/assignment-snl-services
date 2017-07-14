@@ -16,11 +16,6 @@ import org.testng.annotations.Test;
 public class TestSnlServices {
 	
 	static String boardID,pathParam,playerID,playerpath,playerName;
-	
-	@BeforeClass
-	public void setBaseURI(){
-		RestAssured.baseURI="http://10.0.1.86/snl";
-	}
 
 	@Test(priority=1)
 	public void testBoardList_GET(){
@@ -65,14 +60,14 @@ public class TestSnlServices {
 		JsonPath res =RestAssured.when().put("http://10.0.1.86/snl/rest/v1/board/{id}",pathParam).then().extract().jsonPath();
 		 String players=res.getString("response.board.players");
 		 System.out.println(players);
-		 assertEquals(players, null);;
+		 assertEquals(players, null);
 	}
 	
 	@Test(priority=10)
 	public void testNewBoardWithID_DELETE(){
 		
 		RestAssured.given().parameters("success", "OK").when().delete("http://10.0.1.86/snl/rest/v1/board/{id}",pathParam).then().assertThat().statusCode(200);
-		
+		RestAssured.expect().body("response.board", nullValue()).when().get("http://10.0.1.86/snl/rest/v1/board/{id}",pathParam);
 	}
 	
 	@SuppressWarnings("unchecked")
