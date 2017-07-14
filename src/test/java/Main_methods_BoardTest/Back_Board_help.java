@@ -17,15 +17,15 @@ import utility.Datadecider;
 
 public class Back_Board_help {
 
-	Datadecider ver;
+	Datadecider opt;
 	private static String username;
 	private static String password;
 
 	public Back_Board_help() throws IOException {
 
-		ver = new Datadecider();
-		username = ver.readit("username_v2");
-		password = ver.readit("password_v2");
+		opt = new Datadecider();
+		username = opt.readit("username_v2");
+		password = opt.readit("password_v2");
 
 	}
 
@@ -35,7 +35,7 @@ public class Back_Board_help {
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setRequestMethod(type);
 		conn.setRequestProperty("Accept", "application/json");
-		if (ver.readit("version").equals("v2")) {
+		if (opt.readit("version").equals("v2")) {
 			String encoded = Base64.getEncoder()
 					.encodeToString((username + ":" + password).getBytes(StandardCharsets.UTF_8));
 			// Java 8
@@ -52,10 +52,10 @@ public class Back_Board_help {
 		try {
 			// instantiate the URL object with the target URL of the resource to
 			// request
-			URL url = new URL("http://10.0.1.86/snl/rest/" + ver.readit("version") + "/player.json");
+			URL url = new URL(opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/player.json");
 
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-			if (ver.readit("version").equals("v2")) {
+			if (opt.readit("version").equals("v2")) {
 				String encoded = Base64.getEncoder()
 						.encodeToString((username + ":" + password).getBytes(StandardCharsets.UTF_8));
 				// Java 8
@@ -85,11 +85,11 @@ public class Back_Board_help {
 		try {
 			// instantiate the URL object with the target URL of the resource to
 			// request
-			URL url = new URL("http://10.0.1.86/snl/rest/" + ver.readit("version") + "/player/" + player_id + ".json");
+			URL url = new URL(opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/player/" + player_id + ".json");
 
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-			if (ver.readit("version").equals("v2")) {
+			if (opt.readit("version").equals("v2")) {
 				String encoded = Base64.getEncoder()
 						.encodeToString((username + ":" + password).getBytes(StandardCharsets.UTF_8));
 				// Java 8
@@ -117,11 +117,11 @@ public class Back_Board_help {
 		try {
 			// instantiate the URL object with the target URL of the resource to
 			// request
-			URL url = new URL("http://10.0.1.86/snl/rest/" + ver.readit("version") + "/player/" + player_id + ".json");
+			URL url = new URL(opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/player/" + player_id + ".json");
 
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-			if (ver.readit("version").equals("v2")) {
+			if (opt.readit("version").equals("v2")) {
 				String encoded = Base64.getEncoder()
 						.encodeToString((username + ":" + password).getBytes(StandardCharsets.UTF_8));
 				// Java 8
@@ -144,12 +144,12 @@ public class Back_Board_help {
 		try {
 			// instantiate the URL object with the target URL of the resource to
 			// request
-			URL url = new URL("http://10.0.1.86/snl/rest/" + ver.readit("version") + "/move/" + board
+			URL url = new URL(opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/move/" + board
 					+ ".json?player_id=" + player_id);
 
 			System.out.println(url.toString());
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-			if (ver.readit("version").equals("v2")) {
+			if (opt.readit("version").equals("v2")) {
 				String encoded = Base64.getEncoder()
 						.encodeToString((username + ":" + password).getBytes(StandardCharsets.UTF_8));
 				// Java 8
@@ -169,11 +169,11 @@ public class Back_Board_help {
 
 	public HttpURLConnection deleteboard(int Board_id) throws IOException {
 
-		URL url = new URL("http://10.0.1.86/snl/rest/" + ver.readit("version") + "/board/" + Board_id + ".json");
+		URL url = new URL(opt.readit("baseurl") + "/rest/" + opt.readit("version") + "/board/" + Board_id + ".json");
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setRequestMethod("DELETE");
 		conn.setDoOutput(true);
-		if (ver.readit("version").equals("v2")) {
+		if (opt.readit("version").equals("v2")) {
 			String encoded = Base64.getEncoder()
 					.encodeToString((username + ":" + password).getBytes(StandardCharsets.UTF_8));
 			// Java 8
