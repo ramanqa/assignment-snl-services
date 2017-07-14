@@ -7,9 +7,15 @@
         <methods>
           <include name="check_player_details"/>
           <include name="check_board_creation"/>
+          <include name="board_invalid_details"/>
           <include name="update_player"/>
+          <include name="add_player_while_game_is_on"/>
+          <include name="deleteboard"/>
+          <include name="check_inavlid_player_details"/>
           <include name="init"/>
+          <include name="delete_player"/>
           <include name="player_add_check"/>
+          <include name="board_details"/>
           <include name="check_roll_dice"/>
         </methods>
       </class> <!-- web_service_test.assignment_snl_services.BoardTest -->

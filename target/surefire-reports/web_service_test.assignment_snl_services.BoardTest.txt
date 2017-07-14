@@ -1,11 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: web_service_test.assignment_snl_services.BoardTest
 -------------------------------------------------------------------------------
-Tests run: 11, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.254 sec <<< FAILURE!
-check_roll_dice(web_service_test.assignment_snl_services.BoardTest)  Time elapsed: 0.047 sec  <<< FAILURE!
-java.io.IOException: Server returned HTTP response code: 401 for URL: http://10.0.1.86/snl/rest/v3/move/6255.json?player_id=1971?access_token=b22e567c31ff74f3aae43b1bd470cef580d3fcbde90588dda9d3dd2eddc0b0eb
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1876)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
-	at Main_methods_BoardTest.Back_Board_help.getJson(Back_Board_help.java:230)
-	at web_service_test.assignment_snl_services.BoardTest.check_roll_dice(BoardTest.java:188)
-
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.963 sec

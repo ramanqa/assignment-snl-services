@@ -1,104 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="11" passed="10">
+<testng-results skipped="0" failed="0" ignored="0" total="11" passed="11">
   <reporter-output>
   </reporter-output>
-  <suite name="web_service_test.assignment_snl_services.BoardTest" duration-ms="999" started-at="2017-07-14T09:12:29Z" finished-at="2017-07-14T09:12:30Z">
+  <suite name="web_service_test.assignment_snl_services.BoardTest" duration-ms="3674" started-at="2017-07-14T10:56:44Z" finished-at="2017-07-14T10:56:48Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="999" started-at="2017-07-14T09:12:29Z" finished-at="2017-07-14T09:12:30Z">
+    <test name="Command line test" duration-ms="3674" started-at="2017-07-14T10:56:44Z" finished-at="2017-07-14T10:56:48Z">
       <class name="web_service_test.assignment_snl_services.BoardTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@62043840]" name="init" is-config="true" duration-ms="7" started-at="2017-07-14T14:42:29Z" finished-at="2017-07-14T14:42:29Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="init" is-config="true" duration-ms="13" started-at="2017-07-14T16:26:44Z" finished-at="2017-07-14T16:26:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="check_board_creation()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@62043840]" name="check_board_creation" duration-ms="135" started-at="2017-07-14T14:42:29Z" finished-at="2017-07-14T14:42:29Z">
+        <test-method status="PASS" signature="check_board_creation()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="check_board_creation" duration-ms="255" started-at="2017-07-14T16:26:44Z" finished-at="2017-07-14T16:26:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- check_board_creation -->
-        <test-method status="PASS" signature="player_add_check()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@62043840]" name="player_add_check" duration-ms="273" started-at="2017-07-14T14:42:29Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.check_board_creation" finished-at="2017-07-14T14:42:30Z">
+        <test-method status="PASS" signature="player_add_check()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="player_add_check" duration-ms="347" started-at="2017-07-14T16:26:44Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.check_board_creation" finished-at="2017-07-14T16:26:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- player_add_check -->
-        <test-method status="PASS" signature="board_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@62043840]" name="board_details" duration-ms="61" started-at="2017-07-14T14:42:30Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T14:42:30Z">
+        <test-method status="PASS" signature="board_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="board_details" duration-ms="64" started-at="2017-07-14T16:26:44Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T16:26:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- board_details -->
-        <test-method status="PASS" signature="board_invalid_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@62043840]" name="board_invalid_details" duration-ms="31" started-at="2017-07-14T14:42:30Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T14:42:30Z">
+        <test-method status="PASS" signature="board_invalid_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="board_invalid_details" duration-ms="51" started-at="2017-07-14T16:26:45Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T16:26:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- board_invalid_details -->
-        <test-method status="PASS" signature="check_inavlid_player_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@62043840]" name="check_inavlid_player_details" duration-ms="162" started-at="2017-07-14T14:42:30Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T14:42:30Z">
+        <test-method status="PASS" signature="check_inavlid_player_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="check_inavlid_player_details" duration-ms="156" started-at="2017-07-14T16:26:45Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T16:26:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- check_inavlid_player_details -->
-        <test-method status="PASS" signature="check_player_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@62043840]" name="check_player_details" duration-ms="39" started-at="2017-07-14T14:42:30Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T14:42:30Z">
+        <test-method status="PASS" signature="check_player_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="check_player_details" duration-ms="49" started-at="2017-07-14T16:26:45Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T16:26:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- check_player_details -->
-        <test-method status="PASS" signature="update_player()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@62043840]" name="update_player" duration-ms="43" started-at="2017-07-14T14:42:30Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.check_player_details" finished-at="2017-07-14T14:42:30Z">
+        <test-method status="PASS" signature="update_player()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="update_player" duration-ms="42" started-at="2017-07-14T16:26:45Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.check_player_details" finished-at="2017-07-14T16:26:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- update_player -->
-        <test-method status="FAIL" signature="check_roll_dice()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@62043840]" name="check_roll_dice" duration-ms="44" started-at="2017-07-14T14:42:30Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.update_player" finished-at="2017-07-14T14:42:30Z">
-          <exception class="java.io.IOException">
-            <message>
-              <![CDATA[Server returned HTTP response code: 401 for URL: http://10.0.1.86/snl/rest/v3/move/6255.json?player_id=1971?access_token=b22e567c31ff74f3aae43b1bd470cef580d3fcbde90588dda9d3dd2eddc0b0eb]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.io.IOException: Server returned HTTP response code: 401 for URL: http://10.0.1.86/snl/rest/v3/move/6255.json?player_id=1971?access_token=b22e567c31ff74f3aae43b1bd470cef580d3fcbde90588dda9d3dd2eddc0b0eb
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1876)
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
-	at Main_methods_BoardTest.Back_Board_help.getJson(Back_Board_help.java:230)
-	at web_service_test.assignment_snl_services.BoardTest.check_roll_dice(BoardTest.java:188)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.io.IOException -->
+        <test-method status="PASS" signature="check_roll_dice()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="check_roll_dice" duration-ms="2368" started-at="2017-07-14T16:26:45Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.update_player" finished-at="2017-07-14T16:26:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- check_roll_dice -->
-        <test-method status="PASS" signature="delete_player()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@62043840]" name="delete_player" duration-ms="61" started-at="2017-07-14T14:42:30Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.update_player" finished-at="2017-07-14T14:42:30Z">
+        <test-method status="PASS" signature="delete_player()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="delete_player" duration-ms="51" started-at="2017-07-14T16:26:47Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.update_player" finished-at="2017-07-14T16:26:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- delete_player -->
-        <test-method status="PASS" signature="add_player_while_game_is_on()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@62043840]" name="add_player_while_game_is_on" duration-ms="51" started-at="2017-07-14T14:42:30Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.delete_player" finished-at="2017-07-14T14:42:30Z">
+        <test-method status="PASS" signature="add_player_while_game_is_on()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="add_player_while_game_is_on" duration-ms="54" started-at="2017-07-14T16:26:47Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.delete_player" finished-at="2017-07-14T16:26:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- add_player_while_game_is_on -->
-        <test-method status="PASS" signature="deleteboard()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@62043840]" name="deleteboard" duration-ms="73" started-at="2017-07-14T14:42:30Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.add_player_while_game_is_on" finished-at="2017-07-14T14:42:30Z">
+        <test-method status="PASS" signature="deleteboard()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="deleteboard" duration-ms="202" started-at="2017-07-14T16:26:47Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.add_player_while_game_is_on" finished-at="2017-07-14T16:26:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteboard -->

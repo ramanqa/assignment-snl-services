@@ -61,9 +61,8 @@ public class BoardTest {
 
 		try {
 
-			
 			boardHelp.saveToken();
-			
+
 			conn = boardHelp.getConnection(
 					opt.readit("baseurl") + "//rest/" + opt.readit("version") + "/board/new.json", "GET");
 			assertThat(conn.getResponseCode()).isEqualTo(200);
@@ -73,11 +72,8 @@ public class BoardTest {
 			JSONObject inner2 = (JSONObject) inner1.get("board");
 			assertThat(Integer.parseInt(inner2.get("turn").toString())).isEqualTo(1);
 			Board_id = Integer.parseInt(inner2.get("id").toString());
-		
-			
+
 			conn.disconnect();
-			
-		
 
 		}
 
@@ -184,10 +180,11 @@ public class BoardTest {
 	void check_roll_dice() throws IOException, ParseException {
 
 		conn = boardHelp.roll_dice(Board_id, player_id);
-		
-		System.out.println("hereeeeeee"+boardHelp.getJson(conn));
-		
-		JSONObject complete = boardHelp.getJson(conn);
+
+		String input = boardHelp.getJson(conn).toString();
+		JSONParser parser = new JSONParser();
+		JSONObject complete = (JSONObject) parser.parse(input);
+		System.out.println(complete);
 		JSONObject response = (JSONObject) complete.get("response");
 		JSONObject player = (JSONObject) response.get("player");
 		assertThat(Integer.parseInt(response.get("status").toString())).isEqualTo(-1);

@@ -180,12 +180,15 @@ public class Back_Board_help {
 					+ ".json?player_id=" + player_id;
 
 			if (opt.readit("version").equals("v3")) {
-				urls = urls + "?access_token=" + opt.readit("access_token");
+				urls = urls + "&access_token=" + opt.readit("access_token");
 			}
 
+			
+			
+			
 			URL url = new URL(urls);
 
-			System.out.println(url.toString());
+			System.out.println("please check  "+url.toString());
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			if (opt.readit("version").equals("v2")) {
 				String encoded = Base64.getEncoder()
