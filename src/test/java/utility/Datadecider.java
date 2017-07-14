@@ -14,5 +14,12 @@ public class Datadecider {
 		return data_value;
 
 	}
+	public void writeit(String Key,String value) throws IOException {
+	   new OptionReader().writeit(Key, value);
+
+
+	}
+	
+	
 
 }

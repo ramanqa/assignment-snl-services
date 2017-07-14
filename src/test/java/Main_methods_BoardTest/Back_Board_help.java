@@ -9,6 +9,11 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
+import org.apache.oltu.oauth2.client.OAuthClient;
+import org.apache.oltu.oauth2.client.URLConnectionClient;
+import org.apache.oltu.oauth2.client.request.OAuthClientRequest;
+import org.apache.oltu.oauth2.client.response.OAuthJSONAccessTokenResponse;
+import org.apache.oltu.oauth2.common.message.types.GrantType;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -17,7 +22,7 @@ import utility.Datadecider;
 
 public class Back_Board_help {
 
-	Datadecider opt;
+	static Datadecider opt;
 	private static String username;
 	private static String password;
 
@@ -235,6 +240,43 @@ public class Back_Board_help {
 		complete = (JSONObject) parser.parse(br.readLine());
 		return complete;
 
+	}
+	
+	public static void saveToken()
+	{
+		  try {
+			  
+			  
+			  opt = new Datadecider();
+
+	            System.out.println(opt.readit("tokenaccessurl"));
+	            OAuthClient client = new OAuthClient(new URLConnectionClient());
+	            System.out.println(opt.readit("clientid"));
+	            URL url = new URL(opt.readit("tokenaccessurl"));
+	            OAuthClientRequest request = OAuthClientRequest.tokenLocation(opt.readit("tokenaccessurl"))
+	            		.setGrantType(GrantType.CLIENT_CREDENTIALS)
+	                    .setClientId(opt.readit("clientid"))
+	                    .setClientSecret(opt.readit("clientsecret"))
+	                    // .setScope() here if you want to set the token scope
+	                    .buildQueryMessage();
+
+	            String token =
+	                    client.accessToken(request, OAuthJSONAccessTokenResponse.class).getAccessToken();
+	            
+
+                System.out.println(token);
+                
+	            opt.writeit("access_token",token);
+	            
+	            
+	            
+	            
+	}
+		  catch(Exception ex)
+		  {
+			  ex.printStackTrace();
+		  }
+		  
 	}
 
 }

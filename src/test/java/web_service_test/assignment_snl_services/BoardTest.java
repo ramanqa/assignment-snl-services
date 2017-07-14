@@ -62,7 +62,7 @@ public class BoardTest {
 		try {
 
 			
-			
+			boardHelp.saveToken();
 			
 			conn = boardHelp.getConnection(
 					opt.readit("baseurl") + "//rest/" + opt.readit("version") + "/board/new.json", "GET");
