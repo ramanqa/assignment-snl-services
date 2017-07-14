@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="14" passed="14">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="9720" started-at="2017-07-13T06:31:48Z" finished-at="2017-07-13T06:31:57Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="9720" started-at="2017-07-13T06:31:48Z" finished-at="2017-07-13T06:31:57Z">
+      <class name="com.training.OauthTest">
+        <test-method status="PASS" signature="auth()[pri:0, instance:com.training.OauthTest@4501b7af]" name="auth" is-config="true" duration-ms="160" started-at="2017-07-13T12:01:53Z" finished-at="2017-07-13T12:01:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- auth -->
+        <test-method status="PASS" signature="checking_basic_Authentication()[pri:0, instance:com.training.OauthTest@4501b7af]" name="checking_basic_Authentication" duration-ms="808" started-at="2017-07-13T12:01:53Z" finished-at="2017-07-13T12:01:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checking_basic_Authentication -->
+        <test-method status="PASS" signature="testing_board_status()[pri:0, instance:com.training.OauthTest@4501b7af]" name="testing_board_status" duration-ms="1692" started-at="2017-07-13T12:01:53Z" finished-at="2017-07-13T12:01:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_board_status -->
+        <test-method status="PASS" signature="testing_player_Status()[pri:0, instance:com.training.OauthTest@4501b7af]" name="testing_player_Status" duration-ms="187" started-at="2017-07-13T12:01:55Z" finished-at="2017-07-13T12:01:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_player_Status -->
+        <test-method status="PASS" signature="testing_roll_dice_movement_status()[pri:0, instance:com.training.OauthTest@4501b7af]" name="testing_roll_dice_movement_status" duration-ms="67" started-at="2017-07-13T12:01:55Z" finished-at="2017-07-13T12:01:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_roll_dice_movement_status -->
+        <test-method status="PASS" signature="z_deleting_board_and_players()[pri:0, instance:com.training.OauthTest@4501b7af]" name="z_deleting_board_and_players" duration-ms="196" started-at="2017-07-13T12:01:55Z" finished-at="2017-07-13T12:01:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- z_deleting_board_and_players -->
+      </class> <!-- com.training.OauthTest -->
+      <class name="com.training.SnakeandLadderVersion1Test">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.training.SnakeandLadderVersion1Test@523884b2]" name="setBaseUri" is-config="true" duration-ms="1" started-at="2017-07-13T12:01:56Z" finished-at="2017-07-13T12:01:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="testing_1_board_status()[pri:0, instance:com.training.SnakeandLadderVersion1Test@523884b2]" name="testing_1_board_status" duration-ms="925" started-at="2017-07-13T12:01:56Z" finished-at="2017-07-13T12:01:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_1_board_status -->
+        <test-method status="PASS" signature="testing_2_player_Status()[pri:0, instance:com.training.SnakeandLadderVersion1Test@523884b2]" name="testing_2_player_Status" duration-ms="407" started-at="2017-07-13T12:01:57Z" finished-at="2017-07-13T12:01:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_2_player_Status -->
+        <test-method status="PASS" signature="testing_3_roll_dice_movement_status()[pri:0, instance:com.training.SnakeandLadderVersion1Test@523884b2]" name="testing_3_roll_dice_movement_status" duration-ms="105" started-at="2017-07-13T12:01:57Z" finished-at="2017-07-13T12:01:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_3_roll_dice_movement_status -->
+        <test-method status="PASS" signature="z_deleting_board_and_players()[pri:0, instance:com.training.SnakeandLadderVersion1Test@523884b2]" name="z_deleting_board_and_players" duration-ms="244" started-at="2017-07-13T12:01:57Z" finished-at="2017-07-13T12:01:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- z_deleting_board_and_players -->
+      </class> <!-- com.training.SnakeandLadderVersion1Test -->
+      <class name="com.training.Version2Test">
+        <test-method status="PASS" signature="setBaseUri()[pri:0, instance:com.training.Version2Test@28d25987]" name="setBaseUri" is-config="true" duration-ms="383" started-at="2017-07-13T12:01:48Z" finished-at="2017-07-13T12:01:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBaseUri -->
+        <test-method status="PASS" signature="checking_basic_Authentication()[pri:0, instance:com.training.Version2Test@28d25987]" name="checking_basic_Authentication" duration-ms="1237" started-at="2017-07-13T12:01:48Z" finished-at="2017-07-13T12:01:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checking_basic_Authentication -->
+        <test-method status="PASS" signature="testing_board_status()[pri:0, instance:com.training.Version2Test@28d25987]" name="testing_board_status" duration-ms="1791" started-at="2017-07-13T12:01:49Z" finished-at="2017-07-13T12:01:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_board_status -->
+        <test-method status="PASS" signature="testing_player_Status()[pri:0, instance:com.training.Version2Test@28d25987]" name="testing_player_Status" duration-ms="690" started-at="2017-07-13T12:01:51Z" finished-at="2017-07-13T12:01:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_player_Status -->
+        <test-method status="PASS" signature="testing_roll_dice_movement_status()[pri:0, instance:com.training.Version2Test@28d25987]" name="testing_roll_dice_movement_status" duration-ms="254" started-at="2017-07-13T12:01:52Z" finished-at="2017-07-13T12:01:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testing_roll_dice_movement_status -->
+        <test-method status="PASS" signature="z_deleting_board_and_players()[pri:0, instance:com.training.Version2Test@28d25987]" name="z_deleting_board_and_players" duration-ms="519" started-at="2017-07-13T12:01:52Z" finished-at="2017-07-13T12:01:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- z_deleting_board_and_players -->
+      </class> <!-- com.training.Version2Test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
