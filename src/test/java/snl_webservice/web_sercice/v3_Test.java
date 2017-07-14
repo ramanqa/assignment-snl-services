@@ -126,7 +126,7 @@ public class v3_Test {
 
 		jsonObject1.put("name", "user 4");
 		jsonObject.put("player", jsonObject1);
-		given().contentType("application/json").body(jsonObject.toString()).when().put(url);
+		given().auth().oauth2(access_token).contentType("application/json").body(jsonObject.toString()).when().put(url);
 
 		Map<String, String> mymap = new HashMap<>();
 
