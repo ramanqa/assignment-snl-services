@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="7049" started-at="2017-07-18T09:16:26Z" finished-at="2017-07-18T09:16:33Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="7049" started-at="2017-07-18T09:16:26Z" finished-at="2017-07-18T09:16:33Z">
+      <class name="com.qainfotech.tap.training.snlServices.SNLServicesTestV2">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.qainfotech.tap.training.snlServices.SNLServicesTestV2@29ee9faa]" name="before" is-config="true" duration-ms="2197" started-at="2017-07-18T14:46:26Z" finished-at="2017-07-18T14:46:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before -->
+        <test-method status="PASS" signature="a_testStatusCodeJSON()[pri:0, instance:com.qainfotech.tap.training.snlServices.SNLServicesTestV2@29ee9faa]" name="a_testStatusCodeJSON" duration-ms="871" started-at="2017-07-18T14:46:28Z" finished-at="2017-07-18T14:46:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- a_testStatusCodeJSON -->
+        <test-method status="PASS" signature="b_testStatusCodeXML()[pri:0, instance:com.qainfotech.tap.training.snlServices.SNLServicesTestV2@29ee9faa]" name="b_testStatusCodeXML" duration-ms="943" started-at="2017-07-18T14:46:29Z" finished-at="2017-07-18T14:46:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- b_testStatusCodeXML -->
+        <test-method status="PASS" signature="c_test_new_board()[pri:0, instance:com.qainfotech.tap.training.snlServices.SNLServicesTestV2@29ee9faa]" name="c_test_new_board" duration-ms="251" started-at="2017-07-18T14:46:30Z" finished-at="2017-07-18T14:46:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- c_test_new_board -->
+        <test-method status="PASS" signature="d_test_get_details_of_board()[pri:0, instance:com.qainfotech.tap.training.snlServices.SNLServicesTestV2@29ee9faa]" name="d_test_get_details_of_board" duration-ms="210" started-at="2017-07-18T14:46:30Z" finished-at="2017-07-18T14:46:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- d_test_get_details_of_board -->
+        <test-method status="PASS" signature="e_test_DELETEBOARD()[pri:0, instance:com.qainfotech.tap.training.snlServices.SNLServicesTestV2@29ee9faa]" name="e_test_DELETEBOARD" duration-ms="1239" started-at="2017-07-18T14:46:30Z" finished-at="2017-07-18T14:46:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- e_test_DELETEBOARD -->
+        <test-method status="PASS" signature="f_test_player_entry()[pri:0, instance:com.qainfotech.tap.training.snlServices.SNLServicesTestV2@29ee9faa]" name="f_test_player_entry" duration-ms="615" started-at="2017-07-18T14:46:31Z" finished-at="2017-07-18T14:46:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f_test_player_entry -->
+        <test-method status="PASS" signature="g_test_delete_player()[pri:0, instance:com.qainfotech.tap.training.snlServices.SNLServicesTestV2@29ee9faa]" name="g_test_delete_player" duration-ms="428" started-at="2017-07-18T14:46:32Z" finished-at="2017-07-18T14:46:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- g_test_delete_player -->
+        <test-method status="PASS" signature="h_test_player_moves()[pri:0, instance:com.qainfotech.tap.training.snlServices.SNLServicesTestV2@29ee9faa]" name="h_test_player_moves" duration-ms="268" started-at="2017-07-18T14:46:33Z" finished-at="2017-07-18T14:46:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- h_test_player_moves -->
+      </class> <!-- com.qainfotech.tap.training.snlServices.SNLServicesTestV2 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

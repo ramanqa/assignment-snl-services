@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.qainfotech.tap.training.snlServices.SNLServicesV3">
+        <methods>
+          <include name="before"/>
+          <include name="d_test_get_details_of_board"/>
+          <include name="c_test_new_board"/>
+          <include name="h_test_player_moves"/>
+          <include name="b_testStatusCodeXML"/>
+          <include name="f_test_player_entry"/>
+          <include name="a_testStatusCodeJSON"/>
+          <include name="e_test_DELETEBOARD_Ver_1"/>
+          <include name="g_test_delete_player"/>
+        </methods>
+      </class> <!-- com.qainfotech.tap.training.snlServices.SNLServicesV3 -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
