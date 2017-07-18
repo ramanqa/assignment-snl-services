@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-com.mycompany.testsnl.testing_SNLWebService_v3">
+              <span class="suite-name border-passed">com.mycompany.testsnl.testing_SNLWebService_v3</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-com.mycompany.testsnl.testing_SNLWebService_v3">
+                    <span>[unset file name]</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-com.mycompany.testsnl.testing_SNLWebService_v3">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-com.mycompany.testsnl.testing_SNLWebService_v3">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-com.mycompany.testsnl.testing_SNLWebService_v3">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-com.mycompany.testsnl.testing_SNLWebService_v3">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-com.mycompany.testsnl.testing_SNLWebService_v3">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-com.mycompany.testsnl.testing_SNLWebService_v3">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">8 methods,   8 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-com.mycompany.testsnl.testing_SNLWebService_v3" class="hide-methods passed suite-com.mycompany.testsnl.testing_SNLWebService_v3"> (hide)</a> <!-- hide-methods passed suite-com.mycompany.testsnl.testing_SNLWebService_v3 -->
+                      <a href="#" panel-name="suite-com.mycompany.testsnl.testing_SNLWebService_v3" class="show-methods passed suite-com.mycompany.testsnl.testing_SNLWebService_v3"> (show)</a> <!-- show-methods passed suite-com.mycompany.testsnl.testing_SNLWebService_v3 -->
+                    </span>
+                    <div class="method-list-content passed suite-com.mycompany.testsnl.testing_SNLWebService_v3">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.mycompany.testsnl.testing_SNLWebService_v3" title="com.mycompany.testsnl.testing_SNLWebService_v3" hash-for-method="test_Board_Is_Creating">test_Board_Is_Creating</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.mycompany.testsnl.testing_SNLWebService_v3" title="com.mycompany.testsnl.testing_SNLWebService_v3" hash-for-method="test_Board_Is_Deleting">test_Board_Is_Deleting</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.mycompany.testsnl.testing_SNLWebService_v3" title="com.mycompany.testsnl.testing_SNLWebService_v3" hash-for-method="test_Board_Is_Resetting">test_Board_Is_Resetting</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.mycompany.testsnl.testing_SNLWebService_v3" title="com.mycompany.testsnl.testing_SNLWebService_v3" hash-for-method="test_List_Of_Boards">test_List_Of_Boards</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.mycompany.testsnl.testing_SNLWebService_v3" title="com.mycompany.testsnl.testing_SNLWebService_v3" hash-for-method="test_New_Board_Creation">test_New_Board_Creation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.mycompany.testsnl.testing_SNLWebService_v3" title="com.mycompany.testsnl.testing_SNLWebService_v3" hash-for-method="test_add_new_player">test_add_new_player</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.mycompany.testsnl.testing_SNLWebService_v3" title="com.mycompany.testsnl.testing_SNLWebService_v3" hash-for-method="test_delete_player">test_delete_player</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-com.mycompany.testsnl.testing_SNLWebService_v3" title="com.mycompany.testsnl.testing_SNLWebService_v3" hash-for-method="test_player_moves">test_player_moves</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-com.mycompany.testsnl.testing_SNLWebService_v3 -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-com.mycompany.testsnl.testing_SNLWebService_v3" class="panel com.mycompany.testsnl.testing_SNLWebService_v3">
+          <div class="suite-com.mycompany.testsnl.testing_SNLWebService_v3-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.mycompany.testsnl.testing_SNLWebService_v3</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_Board_Is_Creating">
+                  </a> <!-- test_Board_Is_Creating -->
+                  <span class="method-name">test_Board_Is_Creating</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_Board_Is_Deleting">
+                  </a> <!-- test_Board_Is_Deleting -->
+                  <span class="method-name">test_Board_Is_Deleting</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_Board_Is_Resetting">
+                  </a> <!-- test_Board_Is_Resetting -->
+                  <span class="method-name">test_Board_Is_Resetting</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_List_Of_Boards">
+                  </a> <!-- test_List_Of_Boards -->
+                  <span class="method-name">test_List_Of_Boards</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_New_Board_Creation">
+                  </a> <!-- test_New_Board_Creation -->
+                  <span class="method-name">test_New_Board_Creation</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_add_new_player">
+                  </a> <!-- test_add_new_player -->
+                  <span class="method-name">test_add_new_player</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_delete_player">
+                  </a> <!-- test_delete_player -->
+                  <span class="method-name">test_delete_player</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_player_moves">
+                  </a> <!-- test_player_moves -->
+                  <span class="method-name">test_player_moves</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-com.mycompany.testsnl.testing_SNLWebService_v3-class-passed -->
+        </div> <!-- panel com.mycompany.testsnl.testing_SNLWebService_v3 -->
+        <div panel-name="test-xml-com.mycompany.testsnl.testing_SNLWebService_v3" class="panel">
+          <div class="main-panel-header rounded-window-top">
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite verbose=&quot;0&quot; name=&quot;com.mycompany.testsnl.testing_SNLWebService_v3&quot;&gt;
+  &lt;test name=&quot;Command line test&quot; preserve-order=&quot;false&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.mycompany.testsnl.testing_SNLWebService_v3&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Command line test --&gt;
+&lt;/suite&gt; &lt;!-- com.mycompany.testsnl.testing_SNLWebService_v3 --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-com.mycompany.testsnl.testing_SNLWebService_v3" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for com.mycompany.testsnl.testing_SNLWebService_v3</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Command line test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-com.mycompany.testsnl.testing_SNLWebService_v3" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for com.mycompany.testsnl.testing_SNLWebService_v3</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-com.mycompany.testsnl.testing_SNLWebService_v3" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for com.mycompany.testsnl.testing_SNLWebService_v3</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_com.mycompany.testsnl.testing_SNLWebService_v3');
+function tableData_com.mycompany.testsnl.testing_SNLWebService_v3() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(8);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'test_List_Of_Boards')
+data.setCell(0, 2, 'com.mycompany.testsnl.testing_SNLWebService_v3')
+data.setCell(0, 3, 1054);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'test_add_new_player')
+data.setCell(1, 2, 'com.mycompany.testsnl.testing_SNLWebService_v3')
+data.setCell(1, 3, 531);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'test_delete_player')
+data.setCell(2, 2, 'com.mycompany.testsnl.testing_SNLWebService_v3')
+data.setCell(2, 3, 422);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'test_player_moves')
+data.setCell(3, 2, 'com.mycompany.testsnl.testing_SNLWebService_v3')
+data.setCell(3, 3, 328);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'test_Board_Is_Deleting')
+data.setCell(4, 2, 'com.mycompany.testsnl.testing_SNLWebService_v3')
+data.setCell(4, 3, 281);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'test_Board_Is_Resetting')
+data.setCell(5, 2, 'com.mycompany.testsnl.testing_SNLWebService_v3')
+data.setCell(5, 3, 204);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'test_Board_Is_Creating')
+data.setCell(6, 2, 'com.mycompany.testsnl.testing_SNLWebService_v3')
+data.setCell(6, 3, 156);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'test_New_Board_Creation')
+data.setCell(7, 2, 'com.mycompany.testsnl.testing_SNLWebService_v3')
+data.setCell(7, 3, 78);
+window.suiteTableData['com.mycompany.testsnl.testing_SNLWebService_v3']= { tableData: data, tableDiv: 'times-div-com.mycompany.testsnl.testing_SNLWebService_v3'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <div id="times-div-com.mycompany.testsnl.testing_SNLWebService_v3">
+              </div> <!-- times-div-com.mycompany.testsnl.testing_SNLWebService_v3 -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-com.mycompany.testsnl.testing_SNLWebService_v3" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for com.mycompany.testsnl.testing_SNLWebService_v3</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-com.mycompany.testsnl.testing_SNLWebService_v3" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-com.mycompany.testsnl.testing_SNLWebService_v3" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.mycompany.testsnl.testing_SNLWebService_v3</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">SetupURI</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <span class="method-name">test_List_Of_Boards</span>
+                <span class="method-start">2344 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_New_Board_Creation</span>
+                <span class="method-start">3398 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_Board_Is_Creating</span>
+                <span class="method-start">3476 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_Board_Is_Deleting</span>
+                <span class="method-start">3632 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_Board_Is_Resetting</span>
+                <span class="method-start">3913 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_add_new_player</span>
+                <span class="method-start">4117 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_delete_player</span>
+                <span class="method-start">4648 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_player_moves</span>
+                <span class="method-start">5070 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
