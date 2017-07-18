@@ -1,0 +1,48 @@
+{
+    "versions": [{
+            "version" : "v1",
+            "newBoardUrl" : "http://10.0.1.86/snl/rest/v1/board/new.json",
+            "newBoardMethod" : "GET",
+            "newPlayerUrl" : "http://10.0.1.86/snl/rest/v1/player.json",
+            "newPlayerMethod" : "POST",
+            "getParticularBoardUrl" : "http://10.0.1.86/snl/rest/v1/board/",
+            "getParticularMethod" : "GET",
+            "movePlayerUrl" : "http://10.0.1.86/snl/rest/v1/move/",
+            "movePlayerMethod" : "GET",
+            "deletePlayerUrl" : "http://10.0.1.86/snl/rest/v1/player/",
+            "deletePlayerMethod" : "DELETE",
+            "deleteBoardUrl" : "http://10.0.1.86/snl/rest/v1/board/",
+            "deleteBoardMethod" : "DELETE"
+        },
+        {
+            "version" : "v2",
+            "newBoardUrl" : "http://10.0.1.86/snl/rest/v2/board/new.json",
+            "newBoardMethod" : "GET",
+            "newPlayerUrl" : "http://10.0.1.86/snl/rest/v2/player.json",
+            "newPlayerMethod" : "POST",
+            "getParticularBoardUrl" : "http://10.0.1.86/snl/rest/v2/board/",
+            "getParticularMethod" : "GET",
+            "movePlayerUrl" : "http://10.0.1.86/snl/rest/v2/move/",
+            "movePlayerMethod" : "GET",
+            "deletePlayerUrl" : "http://10.0.1.86/snl/rest/v2/player/",
+            "deletePlayerMethod" : "DELETE",
+            "deleteBoardUrl" : "http://10.0.1.86/snl/rest/v2/board/",
+            "deleteBoardMethod" : "DELETE"
+        },
+        {
+            "version" : "v3",
+            "newBoardUrl" : "http://10.0.1.86/snl/rest/v3/board/new.json",
+            "newBoardMethod" : "GET",
+            "newPlayerUrl" : "http://10.0.1.86/snl/rest/v3/player.json",
+            "newPlayerMethod" : "POST",
+            "getParticularBoardUrl" : "http://10.0.1.86/snl/rest/v3/board/",
+            "getParticularMethod" : "GET",
+            "movePlayerUrl" : "http://10.0.1.86/snl/rest/v3/move/",
+            "movePlayerMethod" : "GET",
+            "deletePlayerUrl" : "http://10.0.1.86/snl/rest/v3/player/",
+            "deletePlayerMethod" : "DELETE",
+            "deleteBoardUrl" : "http://10.0.1.86/snl/rest/v3/board/",
+            "deleteBoardMethod" : "DELETE"
+        }
+    ]
+}

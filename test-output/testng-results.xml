@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="4395" started-at="2017-07-18T13:15:39Z" finished-at="2017-07-18T13:15:43Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="4395" started-at="2017-07-18T13:15:39Z" finished-at="2017-07-18T13:15:43Z">
+      <class name="org.mytestng.assign4.RunnerTest">
+        <test-method status="PASS" signature="init(org.mytestng.assign4.Version)[pri:0, instance:org.mytestng.assign4.RunnerTest@4678c730]" name="init" duration-ms="1315" started-at="2017-07-18T18:45:39Z" data-provider="getData" finished-at="2017-07-18T18:45:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.mytestng.assign4.Version@520a3426]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="init(org.mytestng.assign4.Version)[pri:0, instance:org.mytestng.assign4.RunnerTest@4678c730]" name="init" duration-ms="956" started-at="2017-07-18T18:45:40Z" data-provider="getData" finished-at="2017-07-18T18:45:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.mytestng.assign4.Version@41ee392b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="init(org.mytestng.assign4.Version)[pri:0, instance:org.mytestng.assign4.RunnerTest@4678c730]" name="init" duration-ms="2078" started-at="2017-07-18T18:45:41Z" data-provider="getData" finished-at="2017-07-18T18:45:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.mytestng.assign4.Version@57d5872c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+      </class> <!-- org.mytestng.assign4.RunnerTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
