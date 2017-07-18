@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="8" passed="8">
+  <reporter-output>
+  </reporter-output>
+  <suite name="com.mycompany.testsnl.testing_SNLWebService_v3" duration-ms="5413" started-at="2017-07-18T10:11:59Z" finished-at="2017-07-18T10:12:05Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="5413" started-at="2017-07-18T10:11:59Z" finished-at="2017-07-18T10:12:05Z">
+      <class name="com.mycompany.testsnl.testing_SNLWebService_v3">
+        <test-method status="PASS" signature="SetupURI()[pri:0, instance:com.mycompany.testsnl.testing_SNLWebService_v3@1e643faf]" name="SetupURI" is-config="true" duration-ms="2344" started-at="2017-07-18T15:41:59Z" finished-at="2017-07-18T15:42:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetupURI -->
+        <test-method status="PASS" signature="test_List_Of_Boards()[pri:0, instance:com.mycompany.testsnl.testing_SNLWebService_v3@1e643faf]" name="test_List_Of_Boards" duration-ms="1054" started-at="2017-07-18T15:42:02Z" finished-at="2017-07-18T15:42:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_List_Of_Boards -->
+        <test-method status="PASS" signature="test_New_Board_Creation()[pri:0, instance:com.mycompany.testsnl.testing_SNLWebService_v3@1e643faf]" name="test_New_Board_Creation" duration-ms="78" started-at="2017-07-18T15:42:03Z" finished-at="2017-07-18T15:42:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_New_Board_Creation -->
+        <test-method status="PASS" signature="test_Board_Is_Creating()[pri:0, instance:com.mycompany.testsnl.testing_SNLWebService_v3@1e643faf]" name="test_Board_Is_Creating" duration-ms="156" started-at="2017-07-18T15:42:03Z" finished-at="2017-07-18T15:42:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_Board_Is_Creating -->
+        <test-method status="PASS" signature="test_Board_Is_Deleting()[pri:0, instance:com.mycompany.testsnl.testing_SNLWebService_v3@1e643faf]" name="test_Board_Is_Deleting" duration-ms="281" started-at="2017-07-18T15:42:03Z" finished-at="2017-07-18T15:42:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_Board_Is_Deleting -->
+        <test-method status="PASS" signature="test_Board_Is_Resetting()[pri:0, instance:com.mycompany.testsnl.testing_SNLWebService_v3@1e643faf]" name="test_Board_Is_Resetting" duration-ms="204" started-at="2017-07-18T15:42:03Z" finished-at="2017-07-18T15:42:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_Board_Is_Resetting -->
+        <test-method status="PASS" signature="test_add_new_player()[pri:0, instance:com.mycompany.testsnl.testing_SNLWebService_v3@1e643faf]" name="test_add_new_player" duration-ms="531" started-at="2017-07-18T15:42:03Z" finished-at="2017-07-18T15:42:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_add_new_player -->
+        <test-method status="PASS" signature="test_delete_player()[pri:0, instance:com.mycompany.testsnl.testing_SNLWebService_v3@1e643faf]" name="test_delete_player" duration-ms="422" started-at="2017-07-18T15:42:04Z" finished-at="2017-07-18T15:42:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_delete_player -->
+        <test-method status="PASS" signature="test_player_moves()[pri:0, instance:com.mycompany.testsnl.testing_SNLWebService_v3@1e643faf]" name="test_player_moves" duration-ms="328" started-at="2017-07-18T15:42:04Z" finished-at="2017-07-18T15:42:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_player_moves -->
+      </class> <!-- com.mycompany.testsnl.testing_SNLWebService_v3 -->
+    </test> <!-- Command line test -->
+  </suite> <!-- com.mycompany.testsnl.testing_SNLWebService_v3 -->
+</testng-results>

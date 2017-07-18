@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [com.mycompany.testsnl.testing_SNLWebService_v3]">
+  <test name="Command line test(failed)">
+    <classes>
+      <class name="com.mycompany.testsnl.testing_SNLWebService_v3">
+        <methods>
+          <include name="test_Board_Is_Creating"/>
+          <include name="test_Board_Is_Resetting"/>
+          <include name="test_player_moves"/>
+          <include name="SetupURI"/>
+          <include name="test_add_new_player"/>
+          <include name="test_New_Board_Creation"/>
+          <include name="test_Board_Is_Deleting"/>
+          <include name="test_List_Of_Boards"/>
+          <include name="test_delete_player"/>
+        </methods>
+      </class> <!-- com.mycompany.testsnl.testing_SNLWebService_v3 -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [com.mycompany.testsnl.testing_SNLWebService_v3] -->
