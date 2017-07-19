@@ -36,6 +36,7 @@ import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
 import Main_methods_BoardTest.Back_Board_help;
+import Readers.OptionReader;
 import groovy.json.internal.JsonParserLax;
 import groovyjarjarantlr.Version;
 import utility.Datadecider;
@@ -61,27 +62,31 @@ public class BoardTest {
 
 		try {
 
-			boardHelp.saveToken();
+			String temp = System.getProperty("versions");
+			if (temp.equals("v1") || temp.equals("v2") || temp.equals("v3")) {
 
-			conn = boardHelp.getConnection(
-					opt.readit("baseurl") + "//rest/" + opt.readit("version") + "/board/new.json", "GET");
-			assertThat(conn.getResponseCode()).isEqualTo(200);
-			JSONObject complete = boardHelp.getJson(conn);
-			JSONObject inner1 = (JSONObject) complete.get("response");
-			assertThat(Integer.parseInt(inner1.get("status").toString())).isEqualTo(1);
-			JSONObject inner2 = (JSONObject) inner1.get("board");
-			assertThat(Integer.parseInt(inner2.get("turn").toString())).isEqualTo(1);
-			Board_id = Integer.parseInt(inner2.get("id").toString());
+				new OptionReader().writeit("version", temp);
+			}
 
-			conn.disconnect();
-
-		}
-
-		catch (Exception e) {
-
+		} catch (Exception e) {
 			e.printStackTrace();
-
 		}
+
+		if (new OptionReader().optionFileReader("version").equals("v3")) {
+			boardHelp.saveToken();
+		}
+
+		conn = boardHelp.getConnection(opt.readit("baseurl") + "//rest/" + opt.readit("version") + "/board/new.json",
+				"GET");
+		assertThat(conn.getResponseCode()).isEqualTo(200);
+		JSONObject complete = boardHelp.getJson(conn);
+		JSONObject inner1 = (JSONObject) complete.get("response");
+		assertThat(Integer.parseInt(inner1.get("status").toString())).isEqualTo(1);
+		JSONObject inner2 = (JSONObject) inner1.get("board");
+		assertThat(Integer.parseInt(inner2.get("turn").toString())).isEqualTo(1);
+		Board_id = Integer.parseInt(inner2.get("id").toString());
+
+		conn.disconnect();
 
 	}
 

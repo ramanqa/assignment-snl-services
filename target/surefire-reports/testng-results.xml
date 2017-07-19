@@ -2,56 +2,56 @@
 <testng-results skipped="0" failed="0" ignored="0" total="11" passed="11">
   <reporter-output>
   </reporter-output>
-  <suite name="web_service_test.assignment_snl_services.BoardTest" duration-ms="3674" started-at="2017-07-14T10:56:44Z" finished-at="2017-07-14T10:56:48Z">
+  <suite name="web_service_test.assignment_snl_services.BoardTest" duration-ms="2548" started-at="2017-07-19T10:47:19Z" finished-at="2017-07-19T10:47:21Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="3674" started-at="2017-07-14T10:56:44Z" finished-at="2017-07-14T10:56:48Z">
+    <test name="Command line test" duration-ms="2548" started-at="2017-07-19T10:47:19Z" finished-at="2017-07-19T10:47:21Z">
       <class name="web_service_test.assignment_snl_services.BoardTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="init" is-config="true" duration-ms="13" started-at="2017-07-14T16:26:44Z" finished-at="2017-07-14T16:26:44Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@2ef9b8bc]" name="init" is-config="true" duration-ms="9" started-at="2017-07-19T16:17:19Z" finished-at="2017-07-19T16:17:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="check_board_creation()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="check_board_creation" duration-ms="255" started-at="2017-07-14T16:26:44Z" finished-at="2017-07-14T16:26:44Z">
+        <test-method status="PASS" signature="check_board_creation()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@2ef9b8bc]" name="check_board_creation" duration-ms="153" started-at="2017-07-19T16:17:19Z" finished-at="2017-07-19T16:17:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- check_board_creation -->
-        <test-method status="PASS" signature="player_add_check()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="player_add_check" duration-ms="347" started-at="2017-07-14T16:26:44Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.check_board_creation" finished-at="2017-07-14T16:26:44Z">
+        <test-method status="PASS" signature="player_add_check()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@2ef9b8bc]" name="player_add_check" duration-ms="223" started-at="2017-07-19T16:17:19Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.check_board_creation" finished-at="2017-07-19T16:17:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- player_add_check -->
-        <test-method status="PASS" signature="board_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="board_details" duration-ms="64" started-at="2017-07-14T16:26:44Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T16:26:45Z">
+        <test-method status="PASS" signature="board_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@2ef9b8bc]" name="board_details" duration-ms="43" started-at="2017-07-19T16:17:19Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-19T16:17:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- board_details -->
-        <test-method status="PASS" signature="board_invalid_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="board_invalid_details" duration-ms="51" started-at="2017-07-14T16:26:45Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T16:26:45Z">
+        <test-method status="PASS" signature="board_invalid_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@2ef9b8bc]" name="board_invalid_details" duration-ms="62" started-at="2017-07-19T16:17:19Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-19T16:17:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- board_invalid_details -->
-        <test-method status="PASS" signature="check_inavlid_player_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="check_inavlid_player_details" duration-ms="156" started-at="2017-07-14T16:26:45Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T16:26:45Z">
+        <test-method status="PASS" signature="check_inavlid_player_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@2ef9b8bc]" name="check_inavlid_player_details" duration-ms="203" started-at="2017-07-19T16:17:19Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-19T16:17:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- check_inavlid_player_details -->
-        <test-method status="PASS" signature="check_player_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="check_player_details" duration-ms="49" started-at="2017-07-14T16:26:45Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-14T16:26:45Z">
+        <test-method status="PASS" signature="check_player_details()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@2ef9b8bc]" name="check_player_details" duration-ms="35" started-at="2017-07-19T16:17:20Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.player_add_check" finished-at="2017-07-19T16:17:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- check_player_details -->
-        <test-method status="PASS" signature="update_player()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="update_player" duration-ms="42" started-at="2017-07-14T16:26:45Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.check_player_details" finished-at="2017-07-14T16:26:45Z">
+        <test-method status="PASS" signature="update_player()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@2ef9b8bc]" name="update_player" duration-ms="49" started-at="2017-07-19T16:17:20Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.check_player_details" finished-at="2017-07-19T16:17:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- update_player -->
-        <test-method status="PASS" signature="check_roll_dice()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="check_roll_dice" duration-ms="2368" started-at="2017-07-14T16:26:45Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.update_player" finished-at="2017-07-14T16:26:47Z">
+        <test-method status="PASS" signature="check_roll_dice()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@2ef9b8bc]" name="check_roll_dice" duration-ms="1586" started-at="2017-07-19T16:17:20Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.update_player" finished-at="2017-07-19T16:17:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- check_roll_dice -->
-        <test-method status="PASS" signature="delete_player()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="delete_player" duration-ms="51" started-at="2017-07-14T16:26:47Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.update_player" finished-at="2017-07-14T16:26:47Z">
+        <test-method status="PASS" signature="delete_player()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@2ef9b8bc]" name="delete_player" duration-ms="41" started-at="2017-07-19T16:17:21Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.update_player" finished-at="2017-07-19T16:17:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- delete_player -->
-        <test-method status="PASS" signature="add_player_while_game_is_on()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="add_player_while_game_is_on" duration-ms="54" started-at="2017-07-14T16:26:47Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.delete_player" finished-at="2017-07-14T16:26:47Z">
+        <test-method status="PASS" signature="add_player_while_game_is_on()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@2ef9b8bc]" name="add_player_while_game_is_on" duration-ms="40" started-at="2017-07-19T16:17:21Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.delete_player" finished-at="2017-07-19T16:17:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- add_player_while_game_is_on -->
-        <test-method status="PASS" signature="deleteboard()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@6fb554cc]" name="deleteboard" duration-ms="202" started-at="2017-07-14T16:26:47Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.add_player_while_game_is_on" finished-at="2017-07-14T16:26:48Z">
+        <test-method status="PASS" signature="deleteboard()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@2ef9b8bc]" name="deleteboard" duration-ms="85" started-at="2017-07-19T16:17:21Z" depends-on-methods="web_service_test.assignment_snl_services.BoardTest.add_player_while_game_is_on" finished-at="2017-07-19T16:17:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteboard -->
