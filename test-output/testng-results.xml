@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="10" total="11" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="291" started-at="2017-07-19T08:55:16Z" finished-at="2017-07-19T08:55:16Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="291" started-at="2017-07-19T08:55:16Z" finished-at="2017-07-19T08:55:16Z">
+      <class name="web_service_test.assignment_snl_services.BoardTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@e25b2fe]" name="init" is-config="true" duration-ms="10" started-at="2017-07-19T14:25:16Z" finished-at="2017-07-19T14:25:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="check_board_creation()[pri:0, instance:web_service_test.assignment_snl_services.BoardTest@e25b2fe]" name="check_board_creation" duration-ms="261" started-at="2017-07-19T14:25:16Z" finished-at="2017-07-19T14:25:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- check_board_creation -->
+      </class> <!-- web_service_test.assignment_snl_services.BoardTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
